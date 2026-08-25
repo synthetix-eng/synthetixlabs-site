@@ -1,0 +1,16 @@
+---
+// First page ported off the frozen mirror (Phase 1 spike).
+//
+// The body is still raw mirror HTML — Phase 3 replaces it with real
+// components. What this proves is the pipeline: shared shell, per-page
+// content, byte-identical output, and the security scan passing on dist/.
+import Base from '../layouts/Base.astro';
+import body from './_governance.body.html?raw';
+---
+<Base
+  title="governance &#8211; Synthetix Labs"
+  canonical="https://synthetixlabs.ai/governance/"
+  bodyClass="wp-singular page-template page-template-page-templates page-template-home page-template-page-templateshome-php page page-id-245 wp-embed-responsive wp-theme-agenio angie-default ehf-header ehf-footer ehf-template-agenio ehf-stylesheet-agenio ally-default home-bg main-home onepage overflow-x-visible elementor-default elementor-kit-7 elementor-page elementor-page-245"
+>
+  <Fragment set:html={body} />
+</Base>

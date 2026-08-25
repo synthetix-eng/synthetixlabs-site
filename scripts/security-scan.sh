@@ -6,6 +6,12 @@
 set -uo pipefail
 fail=0
 
+# Scan a target directory. Defaults to the repo root; CI passes "dist" so the
+# checks run against what will actually be served, not against the sources.
+TARGET="${1:-.}"
+cd "$TARGET" || { echo "no such directory: $TARGET"; exit 1; }
+echo "==> scanning: $TARGET"
+
 # The scanner must never scan its own pattern definitions. The plan's original
 # version grepped the IOC regex out of finalise-preview.sh and the plan .md and
 # reported "IOC MATCH" on completely clean content -- which would have failed
@@ -84,7 +90,8 @@ if [ $badcanon -ne 0 ]; then fail=1; else echo "    ok"; fi
 echo "==> 7. .git excluded from the deploy"
 # The plan's ignore list used '**/.*', which excludes root dotfiles but NOT the
 # contents of a dot-directory. The first deploy published .git to the public web.
-if ! grep -q '\.git/\*\*' firebase.json 2>/dev/null; then
+FB=firebase.json; [ -f "$FB" ] || FB=../firebase.json
+if ! grep -q '\.git/\*\*' "$FB" 2>/dev/null; then
   echo "    FAIL - firebase.json does not ignore .git/**"; fail=1
 else echo "    ok"; fi
 
