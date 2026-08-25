@@ -51,7 +51,12 @@ find . -type f \( -name '*.jpg' -o -name '*.png' \) -size +1M -not -path './.git
 
 echo "==> 7. Final IOC verification"
 IOC='JANCOK|AVRIL_START|lil_tmp|harvest=1|cache-optimizer-|site-health-[0-9a-f]{8}|wp-obj-|eval\(base64_decode'
-if grep -rEl --binary-files=without-match "$IOC" . 2>/dev/null | grep -v '^./.git' | grep -q .; then
+# NOTE: --exclude the scanner's own files. This script, the plan, the audit and
+# the CI workflow all contain the IOC pattern as literal text, so an unfiltered
+# scan matches itself and fails 100% of the time. Same filter must be used in CI.
+SCAN_EXCLUDES=(--exclude='finalise-preview.sh' --exclude='SYNTHETIX_STATIC_PLAN.md'
+               --exclude='AUDIT.md' --exclude-dir='.git' --exclude-dir='.github')
+if grep -rEl --binary-files=without-match "${SCAN_EXCLUDES[@]}" "$IOC" . 2>/dev/null | grep -q .; then
   echo "    *** IOC MATCH -- DO NOT DEPLOY ***"; exit 2
 fi
 find . -name '*.php' -not -path './.git/*' | grep -q . && { echo "    *** PHP FOUND ***"; exit 2; }
