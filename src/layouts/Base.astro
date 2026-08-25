@@ -1,0 +1,36 @@
+---
+// Base.astro -- the shared page shell, extracted from the wget mirror.
+//
+// The heads of two mirrored pages are 99.7% identical; only <title>, the
+// canonical link and a couple of post-<id> CSS handles differ. So the shell
+// is shared verbatim and those few things become props.
+//
+// The shell fragments are imported with ?raw and rendered via set:html rather
+// than pasted into this template. The mirror's markup contains thousands of
+// inline CSS braces, which Astro would otherwise parse as JS expressions —
+// raw import guarantees the output is byte-identical to the source.
+import headHtml from './shell/head.html?raw';
+import headerHtml from './shell/header.html?raw';
+import footerHtml from './shell/footer.html?raw';
+
+interface Props {
+  title: string;
+  canonical: string;
+  bodyClass: string;
+}
+const { title, canonical, bodyClass } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title set:html={title}></title>
+	<link rel="canonical" href={canonical} />
+	<Fragment set:html={headHtml} />
+</head>
+<body class={bodyClass}>
+<Fragment set:html={headerHtml} />
+<slot />
+<Fragment set:html={footerHtml} />
+</body>
+</html>
