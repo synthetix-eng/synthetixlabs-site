@@ -1,0 +1,10 @@
+# Never commit credentials — this repository is PUBLIC
+*.json.key
+firebase-deployer.json
+service-account*.json
+*-key.json
+
+firebase-debug.log
+firebase-debug.*.log
+.firebase/
+node_modules/

@@ -13,6 +13,25 @@ echo "==> 1. Removing wget query-string duplicates (?p=NNNN)"
 # SEO penalties against the canonical URLs.
 find . -maxdepth 1 -name 'index.html?p=*' -print -delete | sed 's/^/    removed /'
 
+echo "==> 1b. Rewriting links that pointed at those duplicates"
+# The deleted ?p=NNNN files were the targets of the MAIN NAV, the mobile menu
+# and the Contact CTA -- 1,317 links across all 40 pages. Deleting them without
+# this step breaks navigation site-wide. These two steps must never be separated.
+./fix-nav-links.py
+
+echo "==> 1a. Fixing assets whose filename contains a query string"
+# wget saved versioned assets as e.g. "jquery.min.js?ver=3.7.1". The real
+# extension is ".1", so Firebase serves them as text/html and the browser -
+# because of our own nosniff header - REFUSES to execute them. jQuery never
+# loads and the site hangs forever on the splash screen. Must run before deploy.
+./fix-asset-mime.py
+
+echo "==> 1c. Clearing residual broken references"
+./fix-residual-links.py
+
+echo "==> 1d. Restoring the Synthetix logo preloader animation"
+./restore-preloader.py
+
 echo "==> 2. Removing the author archive that exposes the admin username"
 rm -rf "resources/blogs/author/admin_jcmef8dd" && echo "    removed admin author archive"
 
@@ -40,10 +59,16 @@ for p in pathlib.Path('.').rglob('*.html'):
 print(f"    cleaned {n} file(s)")
 PY
 
-echo "==> 5. Flagging the broken contact forms"
-echo "    These still point at Contact Form 7 endpoints that no longer exist."
-echo "    Submissions will fail SILENTLY until replaced with a HubSpot embed:"
-grep -rl 'wpcf7-form' --include='*.html' . 2>/dev/null | sed 's/^/      /'
+echo "==> 5. Verifying the dead contact forms are gone"
+# Phase 3 removed all Contact Form 7 markup (see strip-cf7.py). The working
+# HubSpot embed on /contact/ is now the single conversion path. This step used
+# to only *flag* the problem; it now asserts the fix has held.
+if grep -rql 'wpcf7' --include='*.html' . 2>/dev/null; then
+  echo "    *** CF7 MARKUP IS BACK -- submissions would fail silently ***"
+  grep -rl 'wpcf7' --include='*.html' . | sed 's|^|      |'
+else
+  echo "    clean: no CF7 markup, no file-upload fields"
+fi
 
 echo "==> 6. Oversized images (compress before launch)"
 find . -type f \( -name '*.jpg' -o -name '*.png' \) -size +1M -not -path './.git/*' \
@@ -51,7 +76,12 @@ find . -type f \( -name '*.jpg' -o -name '*.png' \) -size +1M -not -path './.git
 
 echo "==> 7. Final IOC verification"
 IOC='JANCOK|AVRIL_START|lil_tmp|harvest=1|cache-optimizer-|site-health-[0-9a-f]{8}|wp-obj-|eval\(base64_decode'
-if grep -rEl --binary-files=without-match "$IOC" . 2>/dev/null | grep -v '^./.git' | grep -q .; then
+# NOTE: --exclude the scanner's own files. This script, the plan, the audit and
+# the CI workflow all contain the IOC pattern as literal text, so an unfiltered
+# scan matches itself and fails 100% of the time. Same filter must be used in CI.
+SCAN_EXCLUDES=(--exclude='finalise-preview.sh' --exclude='SYNTHETIX_STATIC_PLAN.md'
+               --exclude='AUDIT.md' --exclude-dir='.git' --exclude-dir='.github')
+if grep -rEl --binary-files=without-match "${SCAN_EXCLUDES[@]}" "$IOC" . 2>/dev/null | grep -q .; then
   echo "    *** IOC MATCH -- DO NOT DEPLOY ***"; exit 2
 fi
 find . -name '*.php' -not -path './.git/*' | grep -q . && { echo "    *** PHP FOUND ***"; exit 2; }
