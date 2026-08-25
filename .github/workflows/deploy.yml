@@ -36,6 +36,10 @@ jobs:
         # Scans dist/ - what actually gets served - not the sources.
         run: ./scripts/security-scan.sh dist
 
+      - name: URL preservation check
+        # The migration's biggest risk is silently dropping an indexed URL.
+        run: ./scripts/verify-urls.sh dist
+
       - id: auth
         uses: google-github-actions/auth@v2
         with:

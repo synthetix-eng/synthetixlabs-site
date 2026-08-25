@@ -5,7 +5,7 @@ updated: 2026-07-23
 excerpt: "Cartographer is the discovery and system-mapping documentation surface. In Synthetix this capability is delivered by Analyst plus the Discover agent trio, which together produce structural visibility "
 tags: []
 author: "nitin"
-draft: true
+needsReview: true
 # NOTE: body content does not match this title. Pre-existing
 # authoring error, identical in the DB and on the live site.
 # Needs correct copy before publishing.

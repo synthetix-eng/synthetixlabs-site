@@ -1,0 +1,21 @@
+---
+// Agent docs: /resources/blogs/resources/product-documentation/<slug>/
+import { getCollection, render } from 'astro:content';
+import Post from '../../../../../layouts/Post.astro';
+
+export async function getStaticPaths() {
+  const items = await getCollection('agent-docs', ({ data }) => !data.draft);
+  return items.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+<Post
+  title={entry.data.title}
+  canonical={`https://synthetixlabs.ai/resources/blogs/resources/product-documentation/${entry.id}/`}
+  bodyClass="wp-singular post-template-default single single-post postid-1950 single-format-standard wp-embed-responsive wp-theme-agenio angie-default ehf-header ehf-footer ehf-template-agenio ehf-stylesheet-agenio ally-default home-bg main-home onepage overflow-x-visible elementor-default elementor-kit-7"
+  date={entry.data.date}
+>
+  <Content />
+</Post>

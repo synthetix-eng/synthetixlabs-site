@@ -1,0 +1,86 @@
+---
+// Post.astro -- the shared template for articles, case studies and agent docs.
+//
+// Extracted from a rendered post page. The variable regions (breadcrumb title,
+// h1, author/date meta, tag list, body) are rebuilt from props; everything else
+// is the theme's markup, imported ?raw so Astro does not try to parse the
+// thousands of inline CSS braces as JS expressions.
+//
+// All asset paths in the shell fragments were normalised from depth-relative
+// ("../../../wp-content/") to root-absolute ("/wp-content/"). Articles sit 3
+// levels deep and case studies 5, so a depth-relative template would 404 on
+// half of them.
+import headHtml from './shell/post-head.html?raw';
+import aHtml from './shell/post-a.html?raw';
+import bHtml from './shell/post-b.html?raw';
+import cHtml from './shell/post-c.html?raw';
+import dHtml from './shell/post-d.html?raw';
+
+interface Props {
+  title: string;
+  canonical: string;
+  bodyClass?: string;
+  author?: string;
+  authorSlug?: string;
+  date: Date;
+  tags?: string[];
+}
+const {
+  title, canonical, bodyClass,
+  author = 'Nitin Sinha', authorSlug = 'nitin',
+  date, tags = [],
+} = Astro.props;
+
+const dateLabel = date.toLocaleDateString('en-US', {
+  month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC',
+});
+const dateHref = `/resources/blogs/${date.getUTCFullYear()}/${String(date.getUTCMonth() + 1).padStart(2, '0')}/`;
+const tagLabel = (t: string) =>
+  t.split('-').map((w) => (w === 'ai' ? 'AI' : w[0].toUpperCase() + w.slice(1))).join(' ');
+
+// The breadcrumb repeats the post title; rebuild it rather than shipping the
+// title of whichever post the template happened to be extracted from.
+const bWithCrumb = bHtml.replace(
+  /(<div class="breadcrumbs[\s\S]*?<div>\/<\/div>\s*<div>)[\s\S]*?(<\/div>)/,
+  `$1${title}$2`
+);
+---
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title set:html={title}></title>
+	<link rel="canonical" href={canonical} />
+	<Fragment set:html={headHtml} />
+</head>
+<body class={bodyClass}>
+<Fragment set:html={aHtml} />
+<h1 class="title effectFade fadeUp" set:html={title}></h1>
+<Fragment set:html={bWithCrumb} />
+	<div class="meta-list">
+		<div class="meta-item">
+			<i class="icon icon-user-solid"></i>
+			<a href={`/resources/blogs/author/${authorSlug}/`} class="link">{author}</a>
+		</div>
+		<div class="meta-item">
+			<i class="icon icon-clock-solid"></i>
+			<a href={dateHref} class="link">{dateLabel}</a>
+		</div>
+	</div>
+	<div class="text-body-2 mb--0">
+		<slot />
+	</div>
+<Fragment set:html={cHtml} />
+{tags.length > 0 && (
+	<div class="tags-links">
+		<h2 class="h6 text-body-1">Tags:</h2>
+		<div class="list-tags">
+			{tags.map((t) => (
+				<a href={`/resources/blogs/tag/${t}/`} class="tags-item fw-semibold">{tagLabel(t)}</a>
+			))}
+		</div>
+	</div>
+)}
+<Fragment set:html={dHtml} />
+</body>
+</html>
