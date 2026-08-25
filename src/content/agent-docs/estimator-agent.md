@@ -1,0 +1,42 @@
+---
+title: "Estimator Agent"
+date: 2026-07-21
+updated: 2026-07-21
+excerpt: "Estimator is the planning and sequencing documentation surface. In Synthetix this is operationalized by Delivery Planner, which transforms architecture and estimation signals into executable waves and"
+agent: "Estimator"
+---
+
+### Overview
+
+Estimator is the planning and sequencing documentation surface. In Synthetix this is operationalized by Delivery Planner, which transforms architecture and estimation signals into executable waves and cutover-aware plans.
+
+### Business Value
+
+- Converts high-level design into practical delivery increments.
+- Improves predictability through dependency-aware wave planning.
+- Enables risk-informed sequencing for safer release motion.
+
+### Core Responsibilities
+
+- Build wave plans from architecture and coupling signals.
+- Model dependency ordering and transition constraints.
+- Produce an execution-ready plan with clear increment boundaries.
+
+### Key Inputs
+
+- Architect outputs and architecture handoff structures.
+- Estimation/WBS and coupling-risk context.
+
+### Key Outputs
+
+- Delivery planning artifacts with wave sequencing and cutover guidance.
+
+### Governance and Controls
+
+- Constraint-aware planning behavior.
+- Explicit dependency and risk annotation for reviewable decisions.
+
+### Typical CTA Page Metadata
+
+- Slug: /docs/agents/estimator
+- Primary Audience: Program managers, delivery managers, release planners.

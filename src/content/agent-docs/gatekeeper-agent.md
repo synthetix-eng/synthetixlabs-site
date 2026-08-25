@@ -1,0 +1,41 @@
+---
+title: "Gatekeeper Agent"
+date: 2026-07-21
+updated: 2026-07-21
+excerpt: "Gatekeeper is the policy-enforcement documentation surface for promotion decisions. In Synthetix, gate behavior is distributed across Conductor, Validator, and Deployer controls."
+agent: "Gatekeeper"
+---
+
+### Overview
+
+Gatekeeper is the policy-enforcement documentation surface for promotion decisions. In Synthetix, gate behavior is distributed across Conductor, Validator, and Deployer controls.
+
+### Business Value
+
+- Prevents unsafe progression between stages.
+- Enforces policy-backed release criteria.
+- Creates transparent go/no-go decision points.
+
+### Core Responsibilities
+
+- Enforce transition preconditions.
+- Apply validation and release quality thresholds.
+- Block or route revision paths when controls are not met.
+
+### Key Inputs
+
+- Stage outputs, critic and validation findings, deployment readiness context.
+
+### Key Outputs
+
+- Gate outcomes, hold/block signals, and required remediation steps.
+
+### Governance and Controls
+
+- Policy-driven transition and release checks.
+- Auditable gate outcomes for compliance and governance reviews.
+
+### Typical CTA Page Metadata
+
+- Slug: /docs/agents/gatekeeper
+- Primary Audience: Governance boards, release owners, platform operations.

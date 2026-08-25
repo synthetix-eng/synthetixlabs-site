@@ -1,0 +1,38 @@
+---
+title: "How Synthetix Reduced Operational Toil for a Healthcare Client"
+date: 2026-07-18
+updated: 2026-07-20
+excerpt: "A large healthcare delivery network operating a hybrid infrastructure footprint supporting clinical and administrative systems, with strict uptime requirements across both."
+---
+
+## **Company Overview**
+
+A large healthcare delivery network operating a hybrid infrastructure footprint supporting clinical and administrative systems, with strict uptime requirements across both.
+
+## **The Challenge**
+
+Operations teams were stretched across configuration drift, incident triage, compliance reporting, and ongoing infrastructure support simultaneously. Strict healthcare regulatory requirements around change control, documentation, and audit trails made the challenge more acute, demanding governed automation that could improve operational speed without compromising compliance readiness.
+
+## **Synthetix Solution**
+
+Continuous drift detection, root-cause incident correlation, and policy-gated change control, deployed as a single governed layer across hybrid infrastructure.
+
+- Deployed Synthetix agents for continuous drift detection and remediation support across the hybrid environment
+- Enabled faster incident triage through root-cause correlation across logs, traces, and infrastructure changes
+- Configured governance layers to meet healthcare compliance and audit requirements from the outset
+- Applied policy-gated automation across hybrid infrastructure operations, ensuring every change passed through the appropriate control
+- Improved documentation and approval traceability for every infrastructure change made
+
+## **The Results**
+
+Faster incident response and stronger compliance posture, delivered without adding headcount to an already stretched operations team.
+
+- Reduced operational toil for stretched infrastructure teams
+- Faster incident triage across clinical and administrative systems
+- Compliance-ready infrastructure operations, meeting healthcare regulatory requirements as a default state, not an add-on
+- Improved visibility across the full hybrid environment
+- Stronger change control and audit readiness for every infrastructure change
+
+## Capabilities Demonstrated
+
+Drift Detection · Root-Cause Correlation · Policy-Gated Automation · Healthcare-Native · Audit Traceability
