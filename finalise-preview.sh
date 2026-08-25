@@ -29,6 +29,9 @@ echo "==> 1a. Fixing assets whose filename contains a query string"
 echo "==> 1c. Clearing residual broken references"
 ./fix-residual-links.py
 
+echo "==> 1d. Restoring the Synthetix logo preloader animation"
+./restore-preloader.py
+
 echo "==> 2. Removing the author archive that exposes the admin username"
 rm -rf "resources/blogs/author/admin_jcmef8dd" && echo "    removed admin author archive"
 

@@ -261,57 +261,67 @@
       }
     },
     preloader: function () {
-      $(".preloader").remove();
-      return;
-      if ($(".preloader").length) {
-        var innerBars = document.querySelectorAll(".inner-bar");
-        var increment = 0;
+      if (!$(".preloader").length) { return; }
+      var innerBars = document.querySelectorAll(".inner-bar");
+      var increment = 0;
+      var finished = false;
 
-        function animateBars() {
+      function finish() {
+        if (finished) { return; }
+        finished = true;
+        $(".preloader").remove();
+      }
+
+      function animateBars() {
+        for (var i = 0; i < 2; i++) {
+          if (!innerBars[i + increment]) { continue; }
+          var randomWidth = Math.floor(Math.random() * 101);
+          gsap.to(innerBars[i + increment], {
+            width: randomWidth + "%",
+            duration: 0.3,
+            ease: "none",
+          });
+        }
+
+        gsap.delayedCall(0.3, function () {
           for (var i = 0; i < 2; i++) {
-            var randomWidth = Math.floor(Math.random() * 101);
+            if (!innerBars[i + increment]) { continue; }
             gsap.to(innerBars[i + increment], {
-              width: randomWidth + "%",
+              width: "100%",
               duration: 0.3,
               ease: "none",
             });
           }
 
-          gsap.delayedCall(0.3, function () {
-            for (var i = 0; i < 2; i++) {
-              gsap.to(innerBars[i + increment], {
-                width: "100%",
-                duration: 0.3,
-                ease: "none",
-              });
-            }
+          increment += 2;
 
-            increment += 2;
-
-            if (increment < innerBars.length) {
-              animateBars();
-            } else {
-              var preloaderTL = gsap.timeline({
-                onComplete: function () {
-                  $(".preloader").remove();
-                },
-              });
-
-              preloaderTL.to(".preloader", {
-                "--preloader-clip": "100%",
-                duration: 0.3,
-                ease: "none",
-              });
-            }
-          });
-        }
-
-        $(window).on("load", function () {
-          animateBars();
+          if (increment < innerBars.length) {
+            animateBars();
+          } else {
+            gsap.timeline({ onComplete: finish }).to(".preloader", {
+              "--preloader-clip": "100%",
+              duration: 0.3,
+              ease: "none",
+            });
+          }
         });
-      } else {
-
       }
+
+      function start() {
+        if (!innerBars.length) { finish(); return; }
+        animateBars();
+      }
+
+      // Original bound only to window load; if load had already fired the
+      // animation never ran and the overlay never went away.
+      if (document.readyState === "complete") {
+        start();
+      } else {
+        $(window).on("load", start);
+      }
+
+      // Failsafe: never trap the visitor behind the overlay.
+      setTimeout(finish, 8000);
     },
     goTop: function () {
     if ($("#goTop").length) {
