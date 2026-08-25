@@ -19,6 +19,13 @@ echo "==> 1b. Rewriting links that pointed at those duplicates"
 # this step breaks navigation site-wide. These two steps must never be separated.
 ./fix-nav-links.py
 
+echo "==> 1a. Fixing assets whose filename contains a query string"
+# wget saved versioned assets as e.g. "jquery.min.js?ver=3.7.1". The real
+# extension is ".1", so Firebase serves them as text/html and the browser -
+# because of our own nosniff header - REFUSES to execute them. jQuery never
+# loads and the site hangs forever on the splash screen. Must run before deploy.
+./fix-asset-mime.py
+
 echo "==> 1c. Clearing residual broken references"
 ./fix-residual-links.py
 
