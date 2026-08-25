@@ -1,0 +1,57 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# No long-lived credentials. Auth is Workload Identity Federation, so there is
+# no service-account JSON key in GitHub secrets to leak. id-token lets the job
+# mint a short-lived OIDC token that GCP exchanges for scoped access; the pool
+# is bound to this repository only.
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: deploy-live
+  cancel-in-progress: false
+
+jobs:
+  scan-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Security scan (gates the deploy)
+        run: ./scripts/security-scan.sh
+
+      - id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: projects/323979308345/locations/global/workloadIdentityPools/github/providers/github
+          service_account: firebase-deployer@synthetixlabs-site.iam.gserviceaccount.com
+
+      - name: Deploy to live
+        run: npx --yes firebase-tools@15 deploy --only hosting --project synthetixlabs-site --non-interactive
+
+      - name: Verify the deployed site actually renders
+        run: |
+          set -e
+          URL=https://synthetixlabs-site.web.app
+          code=$(curl -s -o /dev/null -w '%{http_code}' "$URL/")
+          echo "homepage: $code"
+          [ "$code" = "200" ] || { echo "homepage not 200"; exit 1; }
+          # 200 is not enough: the site once returned 200 on every page while
+          # serving jQuery as text/html, so nothing executed and every page hung
+          # on the splash screen. Assert the JS is served executably.
+          ct=$(curl -s -o /dev/null -w '%{content_type}' "$URL/wp-includes/js/jquery/jquery.min.js")
+          echo "jquery content-type: $ct"
+          case "$ct" in
+            *javascript*|*ecmascript*) ;;
+            *) echo "jquery served as '$ct' - browsers will refuse to execute it"; exit 1 ;;
+          esac
+          # .git must never be published
+          g=$(curl -s -o /dev/null -w '%{http_code}' "$URL/.git/config")
+          echo ".git/config: $g"
+          [ "$g" = "404" ] || { echo ".git is exposed"; exit 1; }
