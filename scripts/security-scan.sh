@@ -60,6 +60,27 @@ if grep -rql 'admin_jcmef8dd' --include='*.html' . 2>/dev/null; then
   echo "    FAIL - admin username present in page source"; fail=1
 else echo "    ok"; fi
 
+echo "==> 6b. No noindex directives"
+# The mirror carried noindex,nofollow on ALL 40 pages, inherited from the
+# source WordPress install's "discourage search engines" setting. Shipping it
+# would de-index the entire marketing site from Google.
+if grep -rlE '<meta[^>]*name="robots"[^>]*noindex' --include='*.html' . 2>/dev/null | grep -q .; then
+  echo "    FAIL - noindex present, the site would be de-indexed:"
+  grep -rlE '<meta[^>]*name="robots"[^>]*noindex' --include='*.html' . | head | sed 's|^|      |'
+  fail=1
+else echo "    ok"; fi
+
+echo "==> 6c. Every page has exactly one absolute canonical"
+badcanon=0
+while IFS= read -r f; do
+  n=$(grep -c 'rel="canonical"' "$f")
+  if [ "$n" != "1" ]; then echo "    FAIL - $f has $n canonical(s)"; badcanon=1; fi
+done < <(find . -name index.html -not -path './.git/*')
+if grep -rhoE '<link[^>]*rel="canonical"[^>]*>' --include='*.html' . 2>/dev/null | grep -qv 'https://synthetixlabs.ai'; then
+  echo "    FAIL - non-absolute canonical found"; badcanon=1
+fi
+if [ $badcanon -ne 0 ]; then fail=1; else echo "    ok"; fi
+
 echo "==> 7. .git excluded from the deploy"
 # The plan's ignore list used '**/.*', which excludes root dotfiles but NOT the
 # contents of a dot-directory. The first deploy published .git to the public web.
