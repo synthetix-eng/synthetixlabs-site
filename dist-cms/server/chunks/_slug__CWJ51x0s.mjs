@@ -1,7 +1,7 @@
 import { t as __exportAll } from "./rolldown-runtime_D7D4PA-g.mjs";
 import { A as createAstro, d as renderComponent, y as renderTemplate } from "./jsx-runtime_DQm_vd0H.mjs";
 import { t as createComponent } from "./compiler_BQjKSGmA.mjs";
-import { n as getCollection, r as renderEntry, t as $$Post } from "./Post_DzRatzgV.mjs";
+import { n as getCollection, r as renderEntry, t as $$Post } from "./Post_BZBLLH7l.mjs";
 //#region src/pages/resources/blogs/resources/product-documentation/[slug].astro
 var _slug__exports = /* @__PURE__ */ __exportAll({
 	default: () => $$Slug,

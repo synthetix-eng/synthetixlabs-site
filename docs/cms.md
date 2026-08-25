@@ -26,9 +26,38 @@ requirements that cannot coexist in one config. Both were verified, not assumed:
 Sharing the project root means the editor reads the same `src/content/` files
 and the same `keystatic.config.ts`, with no duplicated dependencies.
 
-## Deploying the editor
+## Deployed
 
-Decided: **Cloud Run** for the runtime, **Keystatic Cloud** for editor auth.
+**https://synthetixlabs-cms-323979308345.asia-south1.run.app/keystatic/**
+
+Cloud Run, region `asia-south1` (Mumbai) — chosen because the editors are in
+Bengaluru and they are the ones who wait on this, not the visitors. Scales to
+zero; measured cold start was ~0.47s.
+
+Billing account `01F860-F42F4F-B72AFB` (CoE development team) is linked to the
+project. Cloud Run cannot run on Spark.
+
+`--allow-unauthenticated` is deliberate. Keystatic Cloud is the auth layer, so
+the URL must be reachable without GCP IAM — requiring IAM would mean every
+editor needs a Google account and a role binding, which is exactly the friction
+Keystatic Cloud exists to remove. The admin UI loads for anyone, but nothing
+can be read or written without signing in.
+
+### Redeploying
+
+```bash
+IMG=asia-south1-docker.pkg.dev/synthetixlabs-site/cms/keystatic
+docker build --platform linux/amd64 -f Dockerfile.cms \
+  --build-arg PUBLIC_KEYSTATIC_STORAGE_KIND=cloud -t $IMG:vN .
+docker push $IMG:vN
+gcloud run deploy synthetixlabs-cms --image $IMG:vN \
+  --project synthetixlabs-site --region asia-south1 --quiet
+```
+
+`--platform linux/amd64` matters when building on an Apple Silicon Mac; without
+it Cloud Run rejects the image architecture.
+
+### Original decision
 
 ```bash
 gcloud run deploy synthetixlabs-cms \

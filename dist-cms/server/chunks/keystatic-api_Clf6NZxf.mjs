@@ -30,7 +30,7 @@ function makeHandler(_config) {
 }
 //#endregion
 //#region keystatic.config.ts
-var storage = { kind: "local" };
+var storage = { kind: "cloud" };
 var common = {
 	excerpt: fields.text({
 		label: "Excerpt",
