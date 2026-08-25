@@ -15,7 +15,11 @@
       "**/node_modules/**",
       "*.sh",
       "*.py",
-      "*.md"
+      "*.md",
+      "**/*.sh",
+      "**/*.py",
+      "scripts/**",
+      ".github/**"
     ],
     "headers": [
       {
