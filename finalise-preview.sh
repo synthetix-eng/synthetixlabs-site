@@ -49,10 +49,16 @@ for p in pathlib.Path('.').rglob('*.html'):
 print(f"    cleaned {n} file(s)")
 PY
 
-echo "==> 5. Flagging the broken contact forms"
-echo "    These still point at Contact Form 7 endpoints that no longer exist."
-echo "    Submissions will fail SILENTLY until replaced with a HubSpot embed:"
-grep -rl 'wpcf7-form' --include='*.html' . 2>/dev/null | sed 's/^/      /'
+echo "==> 5. Verifying the dead contact forms are gone"
+# Phase 3 removed all Contact Form 7 markup (see strip-cf7.py). The working
+# HubSpot embed on /contact/ is now the single conversion path. This step used
+# to only *flag* the problem; it now asserts the fix has held.
+if grep -rql 'wpcf7' --include='*.html' . 2>/dev/null; then
+  echo "    *** CF7 MARKUP IS BACK -- submissions would fail silently ***"
+  grep -rl 'wpcf7' --include='*.html' . | sed 's|^|      |'
+else
+  echo "    clean: no CF7 markup, no file-upload fields"
+fi
 
 echo "==> 6. Oversized images (compress before launch)"
 find . -type f \( -name '*.jpg' -o -name '*.png' \) -size +1M -not -path './.git/*' \
