@@ -56,6 +56,13 @@
           }
         ]
       }
+    ],
+    "redirects": [
+      {
+        "source": "/resources/blogs/fast-isnt-safe-closing-the-governance-gap-in-greenfield-development/embed",
+        "destination": "/resources/blogs/fast-isnt-safe-closing-the-governance-gap-in-greenfield-development/",
+        "type": 301
+      }
     ]
   }
 }

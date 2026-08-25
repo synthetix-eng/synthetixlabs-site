@@ -12,10 +12,12 @@ const base = {
   date: z.coerce.date(),
   updated: z.coerce.date(),
   excerpt: z.string().min(1),
-  // Set on content that must not publish yet. The compliance-review article
-  // carries a body that does not match its title — a pre-existing authoring
-  // error — so it is drafted until correct copy arrives.
+  // Genuinely unpublished content: no page is generated at all.
   draft: z.boolean().default(false),
+  // Published content with a known defect. A page IS still generated, because
+  // these URLs are indexed and live — removing one would be a worse regression
+  // than the defect itself. Flags it for follow-up without breaking the URL.
+  needsReview: z.boolean().default(false),
 };
 
 const articles = defineCollection({

@@ -1,0 +1,25 @@
+---
+// Case studies: /resources/blogs/resources/case-study/<slug>/
+//
+// The doubled "resources" is a WordPress permalink accident. It is preserved
+// deliberately - these URLs are indexed, and a tidier structure is not worth
+// losing their ranking. Any future cleanup must go behind 301s.
+import { getCollection, render } from 'astro:content';
+import Post from '../../../../../layouts/Post.astro';
+
+export async function getStaticPaths() {
+  const items = await getCollection('case-studies', ({ data }) => !data.draft);
+  return items.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+<Post
+  title={entry.data.title}
+  canonical={`https://synthetixlabs.ai/resources/blogs/resources/case-study/${entry.id}/`}
+  bodyClass="wp-singular post-template-default single single-post postid-1950 single-format-standard wp-embed-responsive wp-theme-agenio angie-default ehf-header ehf-footer ehf-template-agenio ehf-stylesheet-agenio ally-default home-bg main-home onepage overflow-x-visible elementor-default elementor-kit-7"
+  date={entry.data.date}
+>
+  <Content />
+</Post>
