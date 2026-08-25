@@ -1,0 +1,40 @@
+---
+title: "How Synthetix Modernized Banking Infrastructure in 12 Weeks"
+date: 2026-07-19
+updated: 2026-07-20
+excerpt: "A leading U.S. banking technology provider, serving 75+ financial institution clients through its digital account origination platform. The platform handles regulated onboarding workflows subject to B"
+---
+
+## **Company Overview**
+
+A leading U.S. banking technology provider, serving 75+ financial institution clients through its digital account origination platform. The platform handles regulated onboarding workflows subject to BSA/AML, CIP, OFAC, and Reg E/DD/CC requirements across its client base.
+
+## **The Challenge**
+
+The provider needed to migrate its digital account origination platform from Kotlin/Spring Boot to Go, across 5 modules, 163 classes, and 23 REST endpoints, without breaking regulatory compliance or exposing PII embedded throughout the codebase. A manual migration approach carried unacceptable compliance and cost risk given the scale and regulatory exposure involved.
+
+## **Synthetix Solution**
+
+A governed migration pipeline that combined automated codebase comprehension, compliance verification, and PII-aware translation into a single, auditable workflow.
+
+- **Codebase Comprehension**: Auto-analyzed 106 source modules, 163 classes, 463 cross-module dependencies, and 5,064 lines of code, with coupling scores generated for every module
+- **Integration Topology**: Mapped every external integration, including IDV, KYC/AML, ACH and card rails, and e-sign, capturing call patterns, authentication modes, retry posture, and data flow
+- **Architecture Artifacts**: Auto-produced five enterprise-grade documents in days, including Legacy HLD, Target HLD, Stakeholder BRD, Capability BRD, and Technical Design Document
+- **Service Decomposition**: Decomposed the Kotlin monolith into target Go services across two migration phases, with full API contracts, data models, and non-functional requirement targets
+- **Compliance Critic Mode**: Generated a regulatory traceability matrix confirming that every BSA/AML, CIP, OFAC, and Reg E/DD/CC compliance touchpoint was preserved in the Go target
+- **PII-Aware Translation**: Identified every PII surface, including SSN, date of birth, account numbers, and driver's license data, and enforced encryption-at-rest, redacted structured logging, and tokenization throughout
+
+> *"Synthetix delivered in 12 weeks what a traditional engagement would take 6+ months to scope. The compliance traceability output alone removed months of audit preparation from our migration plan."* *— VP Engineering, leading U.S. banking technology provider*
+
+## **The Results**
+
+- 80% reduction in analysis effort, with 106 modules analyzed in hours instead of weeks
+- 12-week delivery for a full modernization proof of concept, against a 6+ month industry norm
+- 5 enterprise documents produced in days, eliminating months of manual documentation work
+- Zero compliance gaps, verified through an automated regulatory traceability matrix
+- Reduced migration risk, with PII-aware translation and compliance verification built directly into the pipeline rather than added afterward
+- Lower total engagement cost and faster time to value, driven by reduced team size and rework
+
+## **Capabilities demonstrated**
+
+AI Comprehension · Compliance-Aware · PII-Safe Translation · Multi-Language · Enterprise Documentation · Banking-Native
