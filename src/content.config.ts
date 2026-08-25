@@ -21,7 +21,7 @@ const base = {
 };
 
 const articles = defineCollection({
-  loader: glob({ pattern: '*.md', base: './src/content/articles' }),
+  loader: glob({ pattern: '*.mdx', base: './src/content/articles' }),
   schema: z.object({
     ...base,
     tags: z.array(z.string()).default([]),
@@ -30,12 +30,12 @@ const articles = defineCollection({
 });
 
 const caseStudies = defineCollection({
-  loader: glob({ pattern: '*.md', base: './src/content/case-studies' }),
+  loader: glob({ pattern: '*.mdx', base: './src/content/case-studies' }),
   schema: z.object({ ...base }),
 });
 
 const agentDocs = defineCollection({
-  loader: glob({ pattern: '*.md', base: './src/content/agent-docs' }),
+  loader: glob({ pattern: '*.mdx', base: './src/content/agent-docs' }),
   schema: z.object({
     ...base,
     agent: z.string().min(1),
