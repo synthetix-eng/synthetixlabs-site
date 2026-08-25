@@ -1,0 +1,36 @@
+# Keystatic editor for Cloud Run.
+#
+# This container runs ONLY the editor. The public site stays fully static on
+# Firebase Hosting and never gains a server or an admin surface — which is the
+# entire point of the rebuild, and why the editor lives on its own hostname
+# rather than at synthetixlabs.ai/keystatic.
+FROM node:22-slim AS build
+WORKDIR /app
+
+COPY package.json package-lock.json ./
+RUN npm ci --no-audit --no-fund
+
+COPY astro.cms.config.mjs keystatic.config.ts ./
+COPY src ./src
+
+# Storage kind is baked in at build time: keystatic.config.ts is bundled into
+# the browser, so this must be a PUBLIC_ Vite variable, not a runtime env var.
+ARG PUBLIC_KEYSTATIC_STORAGE_KIND=cloud
+ENV PUBLIC_KEYSTATIC_STORAGE_KIND=$PUBLIC_KEYSTATIC_STORAGE_KIND
+
+RUN npx astro build --config astro.cms.config.mjs
+
+FROM node:22-slim AS run
+WORKDIR /app
+ENV NODE_ENV=production
+# Cloud Run provides PORT; the adapter reads it in astro.cms.config.mjs.
+ENV PORT=8080
+
+COPY package.json package-lock.json ./
+RUN npm ci --omit=dev --no-audit --no-fund && npm cache clean --force
+
+COPY --from=build /app/dist-cms ./dist-cms
+
+USER node
+EXPOSE 8080
+CMD ["node", "./dist-cms/server/entry.mjs"]

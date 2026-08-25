@@ -1,0 +1,12 @@
+node_modules
+dist
+dist-cms
+.git
+.astro
+public
+docs
+tools
+scripts
+*.md
+*.sh
+*.py

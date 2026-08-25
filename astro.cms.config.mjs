@@ -3,6 +3,7 @@ import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import mdx from '@astrojs/mdx';
 import keystatic from '@keystatic/astro';
+import node from '@astrojs/node';
 
 // Config for the Keystatic editor ONLY. Run it with:
 //   npm run cms
@@ -26,4 +27,12 @@ export default defineConfig({
   integrations: [mdx(), react(), keystatic()],
   trailingSlash: 'ignore',
   devToolbar: { enabled: false },
+
+  // Keystatic's routes are prerender: false, so the editor needs a real
+  // server. Cloud Run runs this container; the public site stays static on
+  // Firebase Hosting and never gains a server or an admin surface.
+  output: 'server',
+  adapter: node({ mode: 'standalone' }),
+  server: { port: Number(process.env.PORT) || 8080, host: true },
+  outDir: './dist-cms',
 });

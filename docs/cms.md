@@ -26,7 +26,32 @@ requirements that cannot coexist in one config. Both were verified, not assumed:
 Sharing the project root means the editor reads the same `src/content/` files
 and the same `keystatic.config.ts`, with no duplicated dependencies.
 
-## Deploying the editor — not done yet
+## Deploying the editor
+
+Decided: **Cloud Run** for the runtime, **Keystatic Cloud** for editor auth.
+
+```bash
+gcloud run deploy synthetixlabs-cms \
+  --source . --project synthetixlabs-site --region <REGION> \
+  --dockerfile Dockerfile.cms \
+  --build-arg PUBLIC_KEYSTATIC_STORAGE_KIND=cloud \
+  --min-instances 0 --allow-unauthenticated
+```
+
+`--min-instances 0` matters: the editor is idle almost all the time, so scaling
+to zero keeps the cost near nothing.
+
+Verified locally before any deploy: the image builds, the container starts, and
+`/keystatic/` returns 200 with `/api/keystatic/tree` responding (400, not 404).
+
+Two prerequisites that are not code:
+
+1. **Billing (Blaze) on `synthetixlabs-site`.** Cloud Run cannot run on Spark.
+2. **A Keystatic Cloud project.** `keystatic.config.ts` points at
+   `synthetix/synthetixlabs-site`; the team and project must exist and the slug
+   must match.
+
+## Previous blocker (resolved)
 
 Keystatic's admin **cannot run on Firebase Hosting**. Its API routes need a
 Node.js runtime; a static host cannot serve them. This is true in every storage
