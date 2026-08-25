@@ -1,5 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import mdx from '@astrojs/mdx';
+import react from '@astrojs/react';
 
 // Migration strategy
 // ------------------
@@ -13,6 +15,18 @@ import { defineConfig } from 'astro/config';
 // which is what Firebase already serves and what Google has indexed. Changing
 // either would silently break every indexed URL.
 export default defineConfig({
+  // Keystatic is opt-in via KEYSTATIC=1. Its integration injects routes with
+  // prerender: false, which requires a server adapter — enabling it
+  // unconditionally would break the static production build. The public site
+  // must stay fully static; the editor runs separately.
+  // Keystatic is NOT mounted here. Two hard reasons, both verified:
+  //  1. Its routes are prerender: false, so it needs a server adapter — the
+  //     public site must stay fully static.
+  //  2. Its client calls /api/keystatic/tree with NO trailing slash, which
+  //     trailingSlash: 'always' rejects with a 404. Relaxing trailingSlash
+  //     would change the URL shape Google has indexed, which is not on offer.
+  // The editor therefore runs as a separate app. See docs/cms.md.
+  integrations: [mdx(), react()],
   site: 'https://synthetixlabs.ai',
   output: 'static',
   trailingSlash: 'always',
