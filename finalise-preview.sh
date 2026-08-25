@@ -13,6 +13,12 @@ echo "==> 1. Removing wget query-string duplicates (?p=NNNN)"
 # SEO penalties against the canonical URLs.
 find . -maxdepth 1 -name 'index.html?p=*' -print -delete | sed 's/^/    removed /'
 
+echo "==> 1b. Rewriting links that pointed at those duplicates"
+# The deleted ?p=NNNN files were the targets of the MAIN NAV, the mobile menu
+# and the Contact CTA -- 1,317 links across all 40 pages. Deleting them without
+# this step breaks navigation site-wide. These two steps must never be separated.
+./fix-nav-links.py
+
 echo "==> 2. Removing the author archive that exposes the admin username"
 rm -rf "resources/blogs/author/admin_jcmef8dd" && echo "    removed admin author archive"
 
