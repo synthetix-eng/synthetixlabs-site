@@ -19,6 +19,9 @@ echo "==> 1b. Rewriting links that pointed at those duplicates"
 # this step breaks navigation site-wide. These two steps must never be separated.
 ./fix-nav-links.py
 
+echo "==> 1c. Clearing residual broken references"
+./fix-residual-links.py
+
 echo "==> 2. Removing the author archive that exposes the admin username"
 rm -rf "resources/blogs/author/admin_jcmef8dd" && echo "    removed admin author archive"
 
