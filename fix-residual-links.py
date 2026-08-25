@@ -14,6 +14,13 @@ import pathlib, re, sys
 # daily archives wget never mirrored -> the month archive, which does exist
 MISSING_DAYS = ('14', '18', '19', '20', '21')
 
+# WordPress emoji polyfill: loads wp-emoji-release.min.js (never mirrored -> 404)
+# and pulls emoji assets from s.w.org. Dead weight on a static site and an
+# extra third-party origin, so all three pieces are removed.
+EMOJI_JSON  = re.compile(r'\s*<script[^>]*id=["\']wp-emoji-settings["\'][^>]*>.*?</script>', re.I | re.S)
+EMOJI_LOAD  = re.compile(r'\s*<script[^>]*type=["\']module["\'][^>]*>(?:(?!</script>).)*?wp-emoji-loader(?:(?!</script>).)*?</script>', re.I | re.S)
+EMOJI_STYLE = re.compile(r'\s*<style[^>]*>(?:(?!</style>).)*?img\.wp-smiley(?:(?!</style>).)*?</style>', re.I | re.S)
+
 RSS = re.compile(r'\s*<link[^>]+type=["\']application/rss\+xml["\'][^>]*/?>', re.I)
 # the author byline still carries admin_jcmef8dd in the href, which re-exposes
 # the admin username in page source even though Phase 2 deleted the archive
@@ -22,7 +29,7 @@ PRODDOC = re.compile(r'href="/product-documentation/"')
 DAYS = re.compile(r'(/resources/blogs/2026/07/)(?:' + '|'.join(MISSING_DAYS) + r')/')
 
 def main():
-    counts = dict(rss=0, admin=0, proddoc=0, days=0)
+    counts = dict(rss=0, admin=0, proddoc=0, days=0, emoji=0)
     files = 0
     for p in sorted(pathlib.Path('.').rglob('*.html')):
         if '.git' in p.parts:
@@ -31,6 +38,9 @@ def main():
         t = orig
 
         t, n = RSS.subn('', t);                                   counts['rss'] += n
+        t, n = EMOJI_JSON.subn('', t);                            counts['emoji'] += n
+        t, n = EMOJI_LOAD.subn('', t);                            counts['emoji'] += n
+        t, n = EMOJI_STYLE.subn('', t);                           counts['emoji'] += n
         t, n = ADMIN.subn(r'<span\1>\2</span>', t);               counts['admin'] += n
         t, n = PRODDOC.subn('href="/resources/product-documentation/"', t); counts['proddoc'] += n
         t, n = DAYS.subn(r'\1', t);                               counts['days'] += n
@@ -43,6 +53,7 @@ def main():
     print(f"    admin_jcmef8dd links de-linked: {counts['admin']}")
     print(f"    /product-documentation/ fixed : {counts['proddoc']}")
     print(f"    missing day archives -> month : {counts['days']}")
+    print(f"    wp-emoji blocks removed       : {counts['emoji']}")
     print(f"    files changed                 : {files}")
 
     # stray 404-error pages wget dumped into the theme fonts directory
