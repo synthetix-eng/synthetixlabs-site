@@ -1,0 +1,1843 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <link rel="canonical" href="https://synthetixlabs.ai/agents/" />
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="profile" href="http://gmpg.org/xfn/11" />
+	
+	<title>agents &#8211; Synthetix Labs</title>
+
+
+<!-- Google Tag Manager for WordPress by gtm4wp.com -->
+<script data-cfasync="false" data-pagespeed-no-defer>
+	var gtm4wp_datalayer_name = "dataLayer";
+	var dataLayer = dataLayer || [];
+</script>
+<!-- End Google Tag Manager for WordPress by gtm4wp.com --><link rel='dns-prefetch' href='http://js.hs-scripts.com/' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<link rel='stylesheet' id='hfe-widgets-style-css' href='../wp-content/plugins/header-footer-elementor/inc/widgets-css/frontend.css%3Fver=2.8.8.css' media='all' />
+<style id="classic-theme-styles-inline-css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:where(body) { margin: 0; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:root :where(.wp-block-icon svg){width: 24px;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-term-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-term-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+<link rel='stylesheet' id='hfe-style-css' href='../wp-content/plugins/header-footer-elementor/assets/css/header-footer-elementor.css%3Fver=2.8.8.css' media='all' />
+<link rel='stylesheet' id='elementor-frontend-css' href='../wp-content/plugins/elementor/assets/css/frontend.min.css%3Fver=4.1.3.css' media='all' />
+<style id="elementor-frontend-inline-css">
+.e-heading-base a, .e-paragraph-base a { all: unset; cursor: pointer; }form[data-element_type="e-form"].form-state-success [data-element_type="e-form-success-message"],form[data-element_type="e-form"].form-state-error [data-element_type="e-form-error-message"]{ display: block; }
+/*# sourceURL=elementor-frontend-inline-css */
+</style>
+<link rel='stylesheet' id='elementor-post-7-css' href='../wp-content/uploads/elementor/css/post-7.css%3Fver=1786471327.css' media='all' />
+<link rel='stylesheet' id='elementor-post-70-css' href='../wp-content/uploads/elementor/css/post-70.css%3Fver=1786645720.css' media='all' />
+<link rel='stylesheet' id='base-desktop-css' href='../wp-content/uploads/elementor/css/base-desktop.css%3Fver=6a7b639fc7b4e.css' media='all' />
+<link rel='stylesheet' id='local-46-frontend-desktop-css' href='../wp-content/uploads/elementor/css/local-46-frontend-desktop.css%3Fver=6a7b639fcb7f6.css' media='all' />
+<link rel='stylesheet' id='elementor-post-60-css' href='../wp-content/uploads/elementor/css/post-60.css%3Fver=1786471328.css' media='all' />
+<link rel='stylesheet' id='elementor-post-46-css' href='../wp-content/uploads/elementor/css/post-46.css%3Fver=1786471328.css' media='all' />
+<link rel='stylesheet' id='elementor-post-290-css' href='../wp-content/uploads/elementor/css/post-290.css%3Fver=1786471328.css' media='all' />
+<link rel='stylesheet' id='agenio-fonts-css' href='https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&#038;family=Urbanist:ital,wght@0,100..900;1,100..900&#038;display=swap' media='all' />
+<link rel='stylesheet' id='swiper-css' href='../wp-content/plugins/elementor/assets/lib/swiper/v8/css/swiper.min.css%3Fver=8.4.5.css' media='all' />
+<link rel='stylesheet' id='metismenu-css' href='../wp-content/themes/agenio/assets/css/plugins/metismenu.css' media='all' />
+<link rel='stylesheet' id='bootstrap-css' href='../wp-content/themes/agenio/assets/css/vendor/bootstrap.min.css' media='all' />
+<link rel='stylesheet' id='animate-css' href='../wp-content/themes/agenio/assets/css/vendor/animate.css' media='all' />
+<link rel='stylesheet' id='odometer-css' href='../wp-content/themes/agenio/assets/css/plugins/odometer.css' media='all' />
+<link rel='stylesheet' id='fontawesome-css' href='../wp-content/themes/agenio/assets/css/plugins/fontawesome.min.css' media='all' />
+<link rel='stylesheet' id='agenio-unittest-css' href='../wp-content/themes/agenio/assets/css/wordpress-unit-test.css' media='all' />
+<link rel='stylesheet' id='agenio-style-css' href='../wp-content/themes/agenio/assets/css/style.css' media='all' />
+<link rel='stylesheet' id='hfe-elementor-icons-css' href='../wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css%3Fver=5.34.0.css' media='all' />
+<link rel='stylesheet' id='hfe-icons-list-css' href='../wp-content/plugins/elementor/assets/css/widget-icon-list.min.css%3Fver=3.24.3.css' media='all' />
+<link rel='stylesheet' id='hfe-social-icons-css' href='../wp-content/plugins/elementor/assets/css/widget-social-icons.min.css%3Fver=3.24.0.css' media='all' />
+<link rel='stylesheet' id='hfe-social-share-icons-brands-css' href='../wp-content/plugins/elementor/assets/lib/font-awesome/css/brands.css%3Fver=5.15.3.css' media='all' />
+<link rel='stylesheet' id='hfe-social-share-icons-fontawesome-css' href='../wp-content/plugins/elementor/assets/lib/font-awesome/css/fontawesome.css%3Fver=5.15.3.css' media='all' />
+<link rel='stylesheet' id='hfe-nav-menu-icons-css' href='../wp-content/plugins/elementor/assets/lib/font-awesome/css/solid.css%3Fver=5.15.3.css' media='all' />
+<link rel='stylesheet' id='eael-general-css' href='../wp-content/plugins/essential-addons-for-elementor-lite/assets/front-end/css/view/general.min.css%3Fver=6.6.11.css' media='all' />
+<link rel='stylesheet' id='elementor-gf-roboto-css' href='https://fonts.googleapis.com/css?family=Roboto:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic&#038;display=swap' media='all' />
+<link rel='stylesheet' id='elementor-gf-robotoslab-css' href='https://fonts.googleapis.com/css?family=Roboto+Slab:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic&#038;display=swap' media='all' />
+<script id="jquery-core-js" src="../wp-includes/js/jquery/jquery.min.js"></script>
+<script id="jquery-migrate-js" src="../wp-includes/js/jquery/jquery-migrate.min.js"></script>
+<script id="jquery-js-after">
+var $ = jQuery.noConflict();
+!function($){"use strict";$(document).ready(function(){$(this).scrollTop()>100&&$(".hfe-scroll-to-top-wrap").removeClass("hfe-scroll-to-top-hide"),$(window).scroll(function(){$(this).scrollTop()<100?$(".hfe-scroll-to-top-wrap").fadeOut(300):$(".hfe-scroll-to-top-wrap").fadeIn(300)}),$(".hfe-scroll-to-top-wrap").on("click",function(){$("html, body").animate({scrollTop:0},300);return!1})})}(jQuery);
+!function($){'use strict';$(document).ready(function(){var bar=$('.hfe-reading-progress-bar');if(!bar.length)return;$(window).on('scroll',function(){var s=$(window).scrollTop(),d=$(document).height()-$(window).height(),p=d? s/d*100:0;bar.css('width',p+'%')});});}(jQuery);
+//# sourceURL=jquery-js-after
+</script>
+
+			<!-- DO NOT COPY THIS SNIPPET! Start of Page Analytics Tracking for HubSpot WordPress plugin v11.3.51-->
+			<script class="hsq-set-content-id" data-content-id="standard-page">
+				var _hsq = _hsq || [];
+				_hsq.push(["setContentType", "standard-page"]);
+			</script>
+			<!-- DO NOT COPY THIS SNIPPET! End of Page Analytics Tracking for HubSpot WordPress plugin -->
+			
+<!-- Google Tag Manager for WordPress by gtm4wp.com -->
+<!-- GTM Container placement set to automatic -->
+<script data-cfasync="false" data-pagespeed-no-defer>
+	var dataLayer_content = {"pagePostType":"page","pagePostType2":"single-page","pagePostAuthor":"admin"};
+	dataLayer.push( dataLayer_content );
+</script>
+<script data-cfasync="false" data-pagespeed-no-defer>
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-57L5SRZP');
+</script>
+<!-- End Google Tag Manager for WordPress by gtm4wp.com -->
+			<style>
+				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload),
+				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload) * {
+					background-image: none !important;
+				}
+				@media screen and (max-height: 1024px) {
+					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload),
+					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload) * {
+						background-image: none !important;
+					}
+				}
+				@media screen and (max-height: 640px) {
+					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload),
+					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload) * {
+						background-image: none !important;
+					}
+				}
+			</style>
+			<link rel="icon" href="../wp-content/uploads/2026/07/cropped-Synthetix_Favicon_512-32x32.png" sizes="32x32" />
+<link rel="icon" href="../wp-content/uploads/2026/07/cropped-Synthetix_Favicon_512-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="../wp-content/uploads/2026/07/cropped-Synthetix_Favicon_512-180x180.png" />
+<meta name="msapplication-TileImage" content="/wp-content/uploads/2026/07/cropped-Synthetix_Favicon_512-270x270.png" />
+<style id="wp-custom-css">
+.single-approach-area-start p.disc {
+    color: #74787C;
+    width: 82%;
+}
+.project-wrapper2 .image-area .over-link {
+  pointer-events: none;
+}
+ul li a:hover {
+    color: #0A47C9!important;
+}
+.single-approach-area-start:nth-of-type(4)::after {
+    content: "04";
+}
+.single-approach-area-start:nth-of-type(5)::after {
+    content: "05";
+}
+#governance> .elementor-widget> .elementor-widget-container> .wpr-service-extended-area .service-tags-row, #governance> .elementor-widget> .elementor-widget-container> .wpr-service-extended-area .service-images-row, #governance> .elementor-widget> .elementor-widget-container> .wpr-service-extended-area .service-what-we-do, #governance> .elementor-widget> .elementor-widget-container> .wpr-service-extended-area .service-included  {
+  display: none;
+}
+
+#agentpage>.elementor-widget-container> .wpr-service-extended-area .service-tags-row, #agentpage> .elementor-widget-container> .wpr-service-extended-area .service-images-row, #agentpage> .elementor-widget-container> .wpr-service-extended-area .service-deliverables, #agentpage> .elementor-widget-container> .wpr-service-extended-area .service-included  {
+  display: none;
+}
+
+#whysynthetix> .elementor-widget-container> .services-details-banner .section-inner .image-area, 
+#whysynthetix> .elementor-widget-container> .services-details-banner .section-inner .service-overview .wpr-service-details-content .feature-wrapper-area  {
+   display: none;
+}
+#last-footer {
+  display: none;
+}
+.why-choose-wrapper.ml-auto {
+    height: -webkit-fill-available;
+}
+.section-title-area .sub-title::after {
+    background: #0A47C9;
+}
+.wpr-btn.with-icon .icon {
+    background: linear-gradient(178.82deg, #3E7FE8 1.01%, #3AC8D5 105.12%);
+box-shadow: 4px 8px 2px rgba(0, 0, 0, 0.08), inset 0px -2px 0.5px #3E7FE8, inset 0px 1px 0px #FFFFFF;
+}
+
+.team-apply-wrapper .top-content .square-dot {
+    background: #67DCE4;
+}
+.wpr-services-area .section-bottom-content .service-wrapper .content .top .tag::after, .wpr-cta-area .section-inner .section-bottom-shape .tag::after,.wpr-contact-area .section-inner .left-content-area .location-area .sub-title::after,.wpr-contact-area .section-inner .left-content-area .get-in-touch .sub-title::after {
+    background: #3AC8D5;
+}
+.wpr-faq-area .section-inner .section-content-area .accordion-one .accordion-header button::after,.wpr-contact-area .section-inner .contact-form-area form .single-input.last label i,.toggle  {
+  color: #3AC8D5!important; 
+}
+.wpr-services-area .section-bottom-content .service-wrapper .content .bottom ul {
+    border-left: 2px solid #3AC8D5;
+}
+#goTop .border-progress {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
+    mask-image: conic-gradient(var(--color-primary) var(--progress-angle, 0deg), transparent 0);
+    content: "";
+    z-index: 1;
+    border-radius: 99px;
+    border: 2px solid #0A47C9;
+    transition: var(--transition);
+}
+.header-style-one .header-top{
+  display: none;
+}
+.icon {
+  width: 80px;
+}
+#hidecrousel {
+  display: none;
+}
+.service-wrapper.image-area .image-area img  {
+  height: 100%;
+}
+#startwithhide {
+ display: none;
+}
+.why-choose-wrapper{
+    background: #0000002e;
+    box-shadow: rgb(255 255 255 / 0%) 0px 1px 0px inset, rgb(228, 228, 228) 0px -5px 0px inset, rgb(250, 250, 250) 0px -1px 0px 1px inset;
+}
+#platformdemo {
+  display: none;
+}
+.wpr-service-extended-area .service-deliverables .deliverable-card .deliverable-number {
+  color: #3E7FE8;
+}
+.why-choose-wrapper {
+	background: #FFFFFF;
+}
+#whysynthetixpage> .elementor-widget-container> .wpr-why-choose-us-area .wpr-content-area {
+ background: #eeeeee;
+}
+.elementor-element-89d5198 {
+	display: contents;
+}
+.elementor-element-89d5198 .button-area {
+    display: inline-flex;
+    justify-content: center;
+}
+.elementor-element-89d5198 .button-area .wpr-btn.btn-white {
+	margin-right: 15px;
+}
+.wrapper-list .two {
+	background: #F7F7F7;
+}
+ .wpr-why-choose-us-area .wpr-content-area {
+	background: #eeeeee;
+}
+.why-choose-wrapper .wrapper-header.two{
+	background: #fff;
+}
+li> img {
+	width: 20px;
+}
+.wpr-service-extended-area .service-what-we-do .service-what-left .sub-title::before, .wpr-service-extended-area .service-deliverables .service-deliverables-header .sub-title::before {
+  background: #0A47C9;
+}
+.wpr-banner-area .banner-content-area .bg-shape img {
+ display: none;
+}
+.square-shape.top-left, .square-shape.bottom-left, .square-shape.top-right, .square-shape.bottom-right {
+ display: none;
+}
+.header-style-one .header-style-one-wrapper .left-area {
+    padding: 5px 30px 5px;
+	  border-right: 0px;
+}
+.left-area .logo-area {
+    width: 230px;
+    height: 30px;
+	  display: contents;
+}
+.left-area .logo-area img {
+   height: 65px!important;
+}
+.services-details-banner .section-inner .service-overview .approach-area .left ul li svg path {
+    fill: #0A47C9;
+}
+.elementor-element-4310816 > div {
+    width: 82% !important;
+    max-width: 82% !important;
+}
+.stx-heading,.stx-subheading,.stx-tagline {
+ font-family: var(--font-secondary)!important;
+}
+
+#blogId .eael-grid-post-holder-inner{
+	    display: flex;
+    flex-direction: row;
+	    align-items: center;
+}
+.one, .two{
+	display:none;
+}
+.blog-diops > div{
+	height:100%;
+}
+.blog-diops img{
+	height:200px;
+	object-fit:cover;
+}
+.middle-set{
+	margin:10px 0;
+}
+#blogId .eael-entry-media{
+	width:40%;
+}
+#blogId .eael-entry-wrapper{
+	width:60%;
+}
+#blogId .eael-entry-media{
+	height:100%;
+	object-fit:cover;
+}
+.button-area a:hover{
+	color:#000;
+}
+.blog-single-wrap h1 strong, .blog-single-wrap h2 strong ,.blog-single-wrap h3 strong, .blog-single-wrap h4 strong, .blog-single-wrap a, .blog-single-wrap p, .blog-single-wrap strong, .blog-single-wrap ul, .blog-single-wrap li, .blog-single-wrap span{
+	color:#6B7280;
+}
+#why-sp .product-intro a:hover{
+	color:#fff !important;
+}
+@media only screen and (max-width: 768px) {
+		#blogId .eael-grid-post-holder-inner{
+		display:block !important;
+	}
+	#blogId .eael-entry-media{
+	width:100%!important;;
+}
+#blogId .eael-entry-wrapper{
+	width:100%!important;;
+}
+}
+
+#governance .wpr-services-area .section-bottom-content .service-wrapper .content .bottom .service-btn-area {
+  display: none;
+}
+
+/* Footer CSS */
+
+.cf-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+}
+.cf-copyright {
+    margin: 0;
+	  font-size: 14px;
+}
+.cf-legal {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+.cf-legal a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 14px;
+}
+@media (max-width: 768px) {
+    .cf-bottom {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .cf-legal {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+.wpr-contact-area .section-inner .left-content-area .location-area ul li .h4 {
+  font-size: 20px!important;
+} 
+</style>
+</head>
+
+<body class="wp-singular page-template page-template-page-templates page-template-home page-template-page-templateshome-php page page-id-70 wp-embed-responsive wp-theme-agenio angie-default ehf-header ehf-footer ehf-template-agenio ehf-stylesheet-agenio ally-default home-bg main-home onepage overflow-x-visible elementor-default elementor-kit-7 elementor-page elementor-page-70">
+
+<!-- GTM Container placement set to automatic -->
+<!-- Google Tag Manager (noscript) -->
+				<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-57L5SRZP" height="0" width="0" style="display:none;visibility:hidden" aria-hidden="true"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+                <!-- Preload -->
+        <div class="preloader overflow-hidden">
+            <div class="site-name"><span>SYNTHETIX</span></div>
+            <div class="preloader-gutters">
+                                <div class="bar">
+                    <div class="inner-bar"></div>
+                </div>
+                                <div class="bar">
+                    <div class="inner-bar"></div>
+                </div>
+                                <div class="bar">
+                    <div class="inner-bar"></div>
+                </div>
+                                <div class="bar">
+                    <div class="inner-bar"></div>
+                </div>
+                                <div class="bar">
+                    <div class="inner-bar"></div>
+                </div>
+                                <div class="bar">
+                    <div class="inner-bar"></div>
+                </div>
+                                <div class="bar">
+                    <div class="inner-bar"></div>
+                </div>
+                                <div class="bar">
+                    <div class="inner-bar"></div>
+                </div>
+                            </div>
+        </div>
+        <!-- /Preload -->
+        
+                    <button id="goTop" class="show">
+            <span class="border-progress" style="--progress-angle: 360deg;"></span>
+            <span class="ic-wrap">
+            <span class="icon icon-long-arrow-alt-up-solid"><i class="fa-sharp fa-regular fa-arrow-up-long"></i></span>
+            </span>
+            </button>
+        
+    <div id="page" class="hfeed site">
+
+		<header id="masthead" itemscope="itemscope" itemtype="https://schema.org/WPHeader">
+			<p class="main-title bhf-hidden" itemprop="headline"><a href="../index.html" title="Synthetix Labs" rel="home">Synthetix Labs</a></p>
+			<style>.elementor-60 .elementor-element.elementor-element-6bb6f96{--display:flex;--margin-top:0px;--margin-bottom:0px;--margin-left:0px;--margin-right:0px;--padding-top:0px;--padding-bottom:0px;--padding-left:0px;--padding-right:0px;}</style>		<div data-elementor-type="wp-post" data-elementor-id="60" class="elementor elementor-60">
+				<div class="elementor-element elementor-element-6bb6f96 e-con-full e-flex e-con e-parent" data-id="6bb6f96" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-f82ba4f elementor-widget elementor-widget-agenio_header_widget" data-id="f82ba4f" data-element_type="widget" data-e-type="widget" data-widget_type="agenio_header_widget.default">
+				<div class="elementor-widget-container">
+					        <!-- header area start -->
+        <header class="header-style-one">
+
+                        <!-- Top Bar -->
+            <div class="header-top">
+                <div class="header-top-inner">
+                    <div class="left-icon">
+                        <img src="../wp-content/themes/agenio/assets/images/icon/green-left.svg" alt="">
+                    </div>
+                    <p class="text">
+                        WE ARE AVAILABLE FOR                        <span>DECEMBER PROJECTS</span>
+                    </p>
+                    <div class="right-icon">
+                        <img src="../wp-content/themes/agenio/assets/images/icon/green-right.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="container">
+                <div class="header-style-one-wrapper">
+
+                    <!-- Logo -->
+                    <div class="left-area square-dot">
+                        <div class="logo-area">
+                            <a href="../index.html" class="logo">
+                                <img src="../wp-content/uploads/2026/05/logo-new.png" alt="Synthetix Labs">
+                            </a>
+                        </div>
+                        <span class="square-shape top-left"></span>
+                        <span class="square-shape bottom-left"></span>
+                        <span class="square-shape top-right"></span>
+                        <span class="square-shape bottom-right"></span>
+                    </div>
+
+                    <!-- Desktop Nav -->
+                    <nav class="main-nav-area">
+                        <ul id="menu-main-menu" class="list-unstyled wpr-desktop-menu"><li class="menu-item"><a href="/solutions/" class="main-element">Solutions</a></li><li class="menu-item"><a href="/platform/" class="main-element">Platform</a></li><li class="menu-item active"><a href="/agents/" class="main-element">Agents</a></li><li class="menu-item"><a href="/governance/" class="main-element">Governance</a></li><li class="menu-item"><a href="/why-synthetix/" class="main-element">Why Synthetix</a></li><li class="menu-item"><a href="/company/" class="main-element">Company</a></li><li class="menu-item"><a href="/resources/" class="main-element">Resources</a></li></ul>                    </nav>
+
+                    <!-- CTA Button + Hamburger -->
+                    <div class="button-area-start square-dot">
+                        <a href="/contact/" class="wpr-btn btn-primary">
+                            Contact Us                        </a>
+                        <div class="menu-btn d-flex d-lg-none d-md-flex d-sm-flex" id="menu-btn">
+                            <span class="line one"></span>
+                            <span class="line two"></span>
+                        </div>
+                        <span class="square-shape top-left"></span>
+                        <span class="square-shape bottom-left"></span>
+                        <span class="square-shape top-right"></span>
+                        <span class="square-shape bottom-right"></span>
+                    </div>
+
+                    <!-- Mobile Sidebar -->
+                    <div id="side-bar" class="side-bar">
+                        <div class="sidebar-inner">
+                            <div class="mobile-menu-main">
+                                <nav class="nav-main mainmenu-nav">
+                                    <ul id="mobile-menu" class="list-unstyled wpr-desktop-menu"><li class="menu-item"><a class="main-element" href="/solutions/">Solutions</a></li><li class="menu-item"><a class="main-element" href="/platform/">Platform</a></li><li class="menu-item active"><a class="main-element" href="/agents/">Agents</a></li><li class="menu-item"><a class="main-element" href="/governance/">Governance</a></li><li class="menu-item"><a class="main-element" href="/why-synthetix/">Why Synthetix</a></li><li class="menu-item"><a class="main-element" href="/company/">Company</a></li><li class="menu-item"><a class="main-element" href="/resources/">Resources</a></li></ul>                                </nav>
+                            </div>
+                            <div class="button-area">
+                                <a href="/contact/" class="wpr-btn btn-primary">
+                                    Contact                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+        <!-- header area end -->
+        				</div>
+				</div>
+				</div>
+				</div>
+				</header>
+
+	
+		<div data-elementor-type="wp-page" data-elementor-id="70" class="elementor elementor-70">
+				<div class="elementor-element elementor-element-80a06bf e-con-full e-flex e-con e-parent" data-id="80a06bf" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-624abbf elementor-widget elementor-widget-agenio_breadcrumb_widget" data-id="624abbf" data-element_type="widget" data-e-type="widget" id="agentpage" data-widget_type="agenio_breadcrumb_widget.default">
+				<div class="elementor-widget-container">
+					
+        <!-- wpr banner area start -->
+        <section class="wpr-banner-area breadcrumb">
+            <div class="container">
+                <div class="banner-content-area">
+
+                    <h1 class="section-title text-normal wow scaleIn" data-wow-delay=".7s">
+                        A workforce built for enterprise scale.                    </h1>
+
+                    <p class="desc">
+                        Nine specialist agents. One governed pipeline.                    </p>
+
+                    <!-- Background Shape -->
+                    <div class="bg-shape">
+                        <img decoding="async" src="../wp-content/themes/agenio/assets/images/banner/shape/bg-shape.svg" alt="">
+                    </div>
+
+                    <!-- Floating Shapes -->
+                    <div class="banner-shape-area">
+
+                        <img decoding="async" 
+                            src="/agents/" 
+                            width="200" 
+                            alt=""
+                            class="one wow fadeInLeft"
+                            data-wow-delay=".5s"
+                        >
+
+                        <img decoding="async" 
+                            src="/agents/" 
+                            width="220" 
+                            alt=""
+                            class="two wow fadeInLeft"
+                            data-wow-delay=".5s"
+                        >
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- wpr banner area end -->
+
+        				</div>
+				</div>
+				</div>
+		<div class="elementor-element elementor-element-8cdaad1 e-con-full e-flex e-con e-parent" data-id="8cdaad1" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-80fc8b8 elementor-widget elementor-widget-agenio_service_details_two_widget" data-id="80fc8b8" data-element_type="widget" data-e-type="widget" id="agentpage" data-widget_type="agenio_service_details_two_widget.default">
+				<div class="elementor-widget-container">
+					        <!-- wpr service extended area start -->
+        <section class="wpr-service-extended-area mb--16">
+            <div class="container">
+                <div class="section-inner bg-white border-1">
+
+                    <!-- Tags Row -->
+                    <div class="service-tags-row">
+                                                    <span class="service-tag">
+                                AI Chatbots                            </span>
+                                                    <span class="service-tag">
+                                AI Integration                            </span>
+                                                    <span class="service-tag">
+                                AI Workflows                            </span>
+                                                    <span class="service-tag active">
+                                AI Automation                            </span>
+                                                    <span class="service-tag">
+                                AI Strategy                            </span>
+                                                    <span class="service-tag">
+                                AI Systems                            </span>
+                                            </div>
+
+                    <!-- Two Images Row -->
+                    <div class="service-images-row">
+                        <div class="service-img-wrap service-img-wrap--tall">
+                            <img decoding="async" src="../wp-content/themes/agenio/assets/images/portfolio/02.webp" alt="Automated Direction">
+                            <div class="service-img-label">Automated Direction</div>
+                        </div>
+                        <div class="service-img-wrap service-img-wrap--short">
+                            <img decoding="async" src="../wp-content/themes/agenio/assets/images/service/details-01.webp" alt="Training Systems">
+                            <div class="service-img-label">Training Systems</div>
+                        </div>
+                    </div>
+
+                    <!-- What We Do -->
+                    <div class="service-what-we-do">
+                        <div class="service-what-left">
+                            <p class="sub-title">WHAT WE DO?</p>
+                            <h2 class="section-title second-font font-semi-bold text-normal">
+                                We build Systems<br />
+that scale.                            </h2>
+                        </div>
+                        <div class="service-what-right">
+                            <p class="desc"><p>Nine specialist agents. Each owns a discrete function in the delivery chain including comprehension, strategy, forecasting, quality assurance, orchestration, verification, governance, intelligence, and engineering guidance. </p></p>
+                            <p class="desc mt--20"><p>They operate in sequence, hand off to each other without human coordination overhead, and escalate only when a decision requires human judgment. Listed below in the order they engage.</p></p>
+                        </div>
+                    </div>
+
+                    <!-- Key Deliverables -->
+                    <div class="service-deliverables">
+                        <div class="service-deliverables-header">
+                            <p class="sub-title">KEY DELIVERABLES</p>
+                            <h3 class="h5 second-font font-semi-bold text-normal">Outputs you can count on.</h3>
+                        </div>
+                        <div class="service-deliverables-grid">
+                                                        <div class="deliverable-card">
+                                <div class="deliverable-number">01</div>
+                                <h4 class="deliverable-title">AI Automation System</h4>
+                                <p class="desc">Custom AI workflows, automation setup, system integration, and scalable processes tailored to your business operations.</p>
+                            </div>
+                                                        <div class="deliverable-card">
+                                <div class="deliverable-number">02</div>
+                                <h4 class="deliverable-title">AI Strategy Plan</h4>
+                                <p class="desc">A detailed roadmap covering workflow analysis, automation opportunities, AI integration, and performance goals.</p>
+                            </div>
+                                                        <div class="deliverable-card">
+                                <div class="deliverable-number">03</div>
+                                <h4 class="deliverable-title">AI Workflow Setup</h4>
+                                <p class="desc">Automated workflows, AI chatbot configuration, integrations, and optimized systems built for daily operations.</p>
+                            </div>
+                                                        <div class="deliverable-card">
+                                <div class="deliverable-number">04</div>
+                                <h4 class="deliverable-title">Launch-Ready AI Platform</h4>
+                                <p class="desc">Fully integrated AI-powered systems with automation workflows, scalable infrastructure, and performance-focused deployment.</p>
+                            </div>
+                                                    </div>
+                    </div>
+
+                    <!-- What's Included -->
+                    <div class="service-included">
+                        <div class="service-included-header">
+                            <p class="sub-title">WHAT&#039;S INCLUDED</p>
+                            <h3 class="h5 second-font font-semi-bold text-normal">Everything in one place.</h3>
+                        </div>
+                        <div class="service-included-wrapper">
+
+                            <!-- Column 1 -->
+                            <div class="included-list-col">
+                                <ul class="included-list">
+                                                                        <li>
+                                        <span class="included-check"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M19.9428 7.33556C20.2803 8.59518 19.0204 9.94926 18.8596 11.1655C18.6928 12.4268 19.54 14.0595 18.9147 15.1464C18.2894 16.2334 16.4484 16.3141 15.4396 17.0893C14.4672 17.8391 13.9233 19.6055 12.6643 19.9429C11.4054 20.2802 10.051 19.0196 8.83403 18.8591C7.57279 18.6923 5.94002 19.5394 4.85305 18.9141C3.76609 18.2888 3.68532 16.4479 2.91085 15.4389C2.16092 14.4667 0.394673 13.9234 0.0571579 12.6638C-0.28037 11.4042 0.980371 10.0505 1.14109 8.83424C1.30729 7.5732 0.460077 5.94048 1.08543 4.85354C1.71078 3.7666 3.55172 3.68584 4.56057 2.91073C5.53348 2.16065 6.0768 0.394446 7.33579 0.057115C8.59479 -0.280228 9.94981 0.980128 11.1661 1.14084C12.4274 1.30769 14.0601 0.4605 15.1471 1.08584C16.2341 1.71117 16.3148 3.55206 17.0899 4.56089C17.8364 5.53056 19.6046 6.07334 19.9428 7.33556Z" fill="#B8E900"></path>
+            <path d="M12.8509 8.18213L8.30543 12.7276L6.23932 10.6615" stroke="#111111" stroke-width="1.36364" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg></span>
+                                        Dedicated AI specialist                                    </li>
+                                                                        <li>
+                                        <span class="included-check"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M19.9428 7.33556C20.2803 8.59518 19.0204 9.94926 18.8596 11.1655C18.6928 12.4268 19.54 14.0595 18.9147 15.1464C18.2894 16.2334 16.4484 16.3141 15.4396 17.0893C14.4672 17.8391 13.9233 19.6055 12.6643 19.9429C11.4054 20.2802 10.051 19.0196 8.83403 18.8591C7.57279 18.6923 5.94002 19.5394 4.85305 18.9141C3.76609 18.2888 3.68532 16.4479 2.91085 15.4389C2.16092 14.4667 0.394673 13.9234 0.0571579 12.6638C-0.28037 11.4042 0.980371 10.0505 1.14109 8.83424C1.30729 7.5732 0.460077 5.94048 1.08543 4.85354C1.71078 3.7666 3.55172 3.68584 4.56057 2.91073C5.53348 2.16065 6.0768 0.394446 7.33579 0.057115C8.59479 -0.280228 9.94981 0.980128 11.1661 1.14084C12.4274 1.30769 14.0601 0.4605 15.1471 1.08584C16.2341 1.71117 16.3148 3.55206 17.0899 4.56089C17.8364 5.53056 19.6046 6.07334 19.9428 7.33556Z" fill="#B8E900"></path>
+            <path d="M12.8509 8.18213L8.30543 12.7276L6.23932 10.6615" stroke="#111111" stroke-width="1.36364" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg></span>
+                                        Weekly progress updates                                    </li>
+                                                                        <li>
+                                        <span class="included-check"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M19.9428 7.33556C20.2803 8.59518 19.0204 9.94926 18.8596 11.1655C18.6928 12.4268 19.54 14.0595 18.9147 15.1464C18.2894 16.2334 16.4484 16.3141 15.4396 17.0893C14.4672 17.8391 13.9233 19.6055 12.6643 19.9429C11.4054 20.2802 10.051 19.0196 8.83403 18.8591C7.57279 18.6923 5.94002 19.5394 4.85305 18.9141C3.76609 18.2888 3.68532 16.4479 2.91085 15.4389C2.16092 14.4667 0.394673 13.9234 0.0571579 12.6638C-0.28037 11.4042 0.980371 10.0505 1.14109 8.83424C1.30729 7.5732 0.460077 5.94048 1.08543 4.85354C1.71078 3.7666 3.55172 3.68584 4.56057 2.91073C5.53348 2.16065 6.0768 0.394446 7.33579 0.057115C8.59479 -0.280228 9.94981 0.980128 11.1661 1.14084C12.4274 1.30769 14.0601 0.4605 15.1471 1.08584C16.2341 1.71117 16.3148 3.55206 17.0899 4.56089C17.8364 5.53056 19.6046 6.07334 19.9428 7.33556Z" fill="#B8E900"></path>
+            <path d="M12.8509 8.18213L8.30543 12.7276L6.23932 10.6615" stroke="#111111" stroke-width="1.36364" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg></span>
+                                        2 rounds of revisions                                    </li>
+                                                                        <li>
+                                        <span class="included-check"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M19.9428 7.33556C20.2803 8.59518 19.0204 9.94926 18.8596 11.1655C18.6928 12.4268 19.54 14.0595 18.9147 15.1464C18.2894 16.2334 16.4484 16.3141 15.4396 17.0893C14.4672 17.8391 13.9233 19.6055 12.6643 19.9429C11.4054 20.2802 10.051 19.0196 8.83403 18.8591C7.57279 18.6923 5.94002 19.5394 4.85305 18.9141C3.76609 18.2888 3.68532 16.4479 2.91085 15.4389C2.16092 14.4667 0.394673 13.9234 0.0571579 12.6638C-0.28037 11.4042 0.980371 10.0505 1.14109 8.83424C1.30729 7.5732 0.460077 5.94048 1.08543 4.85354C1.71078 3.7666 3.55172 3.68584 4.56057 2.91073C5.53348 2.16065 6.0768 0.394446 7.33579 0.057115C8.59479 -0.280228 9.94981 0.980128 11.1661 1.14084C12.4274 1.30769 14.0601 0.4605 15.1471 1.08584C16.2341 1.71117 16.3148 3.55206 17.0899 4.56089C17.8364 5.53056 19.6046 6.07334 19.9428 7.33556Z" fill="#B8E900"></path>
+            <path d="M12.8509 8.18213L8.30543 12.7276L6.23932 10.6615" stroke="#111111" stroke-width="1.36364" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg></span>
+                                        Full system ownership                                    </li>
+                                                                    </ul>
+                            </div>
+
+                            <!-- Column 2 -->
+                            <div class="included-list-col">
+                                <ul class="included-list">
+                                                                        <li>
+                                        <span class="included-check"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M19.9428 7.33556C20.2803 8.59518 19.0204 9.94926 18.8596 11.1655C18.6928 12.4268 19.54 14.0595 18.9147 15.1464C18.2894 16.2334 16.4484 16.3141 15.4396 17.0893C14.4672 17.8391 13.9233 19.6055 12.6643 19.9429C11.4054 20.2802 10.051 19.0196 8.83403 18.8591C7.57279 18.6923 5.94002 19.5394 4.85305 18.9141C3.76609 18.2888 3.68532 16.4479 2.91085 15.4389C2.16092 14.4667 0.394673 13.9234 0.0571579 12.6638C-0.28037 11.4042 0.980371 10.0505 1.14109 8.83424C1.30729 7.5732 0.460077 5.94048 1.08543 4.85354C1.71078 3.7666 3.55172 3.68584 4.56057 2.91073C5.53348 2.16065 6.0768 0.394446 7.33579 0.057115C8.59479 -0.280228 9.94981 0.980128 11.1661 1.14084C12.4274 1.30769 14.0601 0.4605 15.1471 1.08584C16.2341 1.71117 16.3148 3.55206 17.0899 4.56089C17.8364 5.53056 19.6046 6.07334 19.9428 7.33556Z" fill="#B8E900"></path>
+            <path d="M12.8509 8.18213L8.30543 12.7276L6.23932 10.6615" stroke="#111111" stroke-width="1.36364" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg></span>
+                                        Post-launch support (30 days)                                    </li>
+                                                                        <li>
+                                        <span class="included-check"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M19.9428 7.33556C20.2803 8.59518 19.0204 9.94926 18.8596 11.1655C18.6928 12.4268 19.54 14.0595 18.9147 15.1464C18.2894 16.2334 16.4484 16.3141 15.4396 17.0893C14.4672 17.8391 13.9233 19.6055 12.6643 19.9429C11.4054 20.2802 10.051 19.0196 8.83403 18.8591C7.57279 18.6923 5.94002 19.5394 4.85305 18.9141C3.76609 18.2888 3.68532 16.4479 2.91085 15.4389C2.16092 14.4667 0.394673 13.9234 0.0571579 12.6638C-0.28037 11.4042 0.980371 10.0505 1.14109 8.83424C1.30729 7.5732 0.460077 5.94048 1.08543 4.85354C1.71078 3.7666 3.55172 3.68584 4.56057 2.91073C5.53348 2.16065 6.0768 0.394446 7.33579 0.057115C8.59479 -0.280228 9.94981 0.980128 11.1661 1.14084C12.4274 1.30769 14.0601 0.4605 15.1471 1.08584C16.2341 1.71117 16.3148 3.55206 17.0899 4.56089C17.8364 5.53056 19.6046 6.07334 19.9428 7.33556Z" fill="#B8E900"></path>
+            <path d="M12.8509 8.18213L8.30543 12.7276L6.23932 10.6615" stroke="#111111" stroke-width="1.36364" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg></span>
+                                        Analytics &amp; performance dashboard                                    </li>
+                                                                        <li>
+                                        <span class="included-check"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M19.9428 7.33556C20.2803 8.59518 19.0204 9.94926 18.8596 11.1655C18.6928 12.4268 19.54 14.0595 18.9147 15.1464C18.2894 16.2334 16.4484 16.3141 15.4396 17.0893C14.4672 17.8391 13.9233 19.6055 12.6643 19.9429C11.4054 20.2802 10.051 19.0196 8.83403 18.8591C7.57279 18.6923 5.94002 19.5394 4.85305 18.9141C3.76609 18.2888 3.68532 16.4479 2.91085 15.4389C2.16092 14.4667 0.394673 13.9234 0.0571579 12.6638C-0.28037 11.4042 0.980371 10.0505 1.14109 8.83424C1.30729 7.5732 0.460077 5.94048 1.08543 4.85354C1.71078 3.7666 3.55172 3.68584 4.56057 2.91073C5.53348 2.16065 6.0768 0.394446 7.33579 0.057115C8.59479 -0.280228 9.94981 0.980128 11.1661 1.14084C12.4274 1.30769 14.0601 0.4605 15.1471 1.08584C16.2341 1.71117 16.3148 3.55206 17.0899 4.56089C17.8364 5.53056 19.6046 6.07334 19.9428 7.33556Z" fill="#B8E900"></path>
+            <path d="M12.8509 8.18213L8.30543 12.7276L6.23932 10.6615" stroke="#111111" stroke-width="1.36364" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg></span>
+                                        Collaborative workflow planning                                    </li>
+                                                                        <li>
+                                        <span class="included-check"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M19.9428 7.33556C20.2803 8.59518 19.0204 9.94926 18.8596 11.1655C18.6928 12.4268 19.54 14.0595 18.9147 15.1464C18.2894 16.2334 16.4484 16.3141 15.4396 17.0893C14.4672 17.8391 13.9233 19.6055 12.6643 19.9429C11.4054 20.2802 10.051 19.0196 8.83403 18.8591C7.57279 18.6923 5.94002 19.5394 4.85305 18.9141C3.76609 18.2888 3.68532 16.4479 2.91085 15.4389C2.16092 14.4667 0.394673 13.9234 0.0571579 12.6638C-0.28037 11.4042 0.980371 10.0505 1.14109 8.83424C1.30729 7.5732 0.460077 5.94048 1.08543 4.85354C1.71078 3.7666 3.55172 3.68584 4.56057 2.91073C5.53348 2.16065 6.0768 0.394446 7.33579 0.057115C8.59479 -0.280228 9.94981 0.980128 11.1661 1.14084C12.4274 1.30769 14.0601 0.4605 15.1471 1.08584C16.2341 1.71117 16.3148 3.55206 17.0899 4.56089C17.8364 5.53056 19.6046 6.07334 19.9428 7.33556Z" fill="#B8E900"></path>
+            <path d="M12.8509 8.18213L8.30543 12.7276L6.23932 10.6615" stroke="#111111" stroke-width="1.36364" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg></span>
+                                        NDA &amp; IP protection agreement                                    </li>
+                                                                    </ul>
+                            </div>
+
+                            <!-- CTA -->
+                            <div class="included-cta">
+                                <p class="desc">Ready to get started? Let&#039;s talk about your project.</p>
+                                <a href="http://wpriverthemes.com/agenio/contact" class="wpr-btn btn-primary with-icon">
+                                    <div class="inner">
+                                        <div class="icon">
+                                            <span class="fixed-arrow">
+                                                <img decoding="async" src="../wp-content/themes/agenio/assets/images/icon/button-arrow-fixed.svg" alt="">
+                                            </span>
+                                                                                            <span><img decoding="async" src="../wp-content/themes/agenio/assets/images/icon/button-arrow-2.svg" alt=""></span>
+                                                                                            <span><img decoding="async" src="../wp-content/themes/agenio/assets/images/icon/button-arrow-2.svg" alt=""></span>
+                                                                                            <span><img decoding="async" src="../wp-content/themes/agenio/assets/images/icon/button-arrow-2.svg" alt=""></span>
+                                                                                            <span><img decoding="async" src="../wp-content/themes/agenio/assets/images/icon/button-arrow-2.svg" alt=""></span>
+                                                                                    </div>
+                                    </div>
+                                    Start a Project                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- wpr service extended area end -->
+        				</div>
+				</div>
+				</div>
+		<div class="elementor-element elementor-element-12c7d9d e-con-full e-flex e-con e-parent" data-id="12c7d9d" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-345cc6e elementor-widget elementor-widget-agenio_breadcrumb_widget" data-id="345cc6e" data-element_type="widget" data-e-type="widget" data-widget_type="agenio_breadcrumb_widget.default">
+				<div class="elementor-widget-container">
+					
+        <!-- wpr banner area start -->
+        <section class="wpr-banner-area breadcrumb">
+            <div class="container">
+                <div class="banner-content-area">
+
+                    <h1 class="section-title text-normal wow scaleIn" data-wow-delay=".7s">
+                        Autonomous Handoffs. Accountable Outcomes.                    </h1>
+
+                    <p class="desc">
+                        Cartographer maps the estate. Architect generates the target state. Estimator produces the defensible plan. Critic audits every output before it moves: human gate. The Builder swarm executes. Examiner validates. Gatekeeper enforces policy and closes the audit trail: human gate. Seven autonomous handoffs, two human approvals, full program accountability at every stage.                    </p>
+
+                    <!-- Background Shape -->
+                    <div class="bg-shape">
+                        <img decoding="async" src="/agents/" alt="">
+                    </div>
+
+                    <!-- Floating Shapes -->
+                    <div class="banner-shape-area">
+
+                        <img decoding="async" 
+                            src="/agents/" 
+                            width="200" 
+                            alt=""
+                            class="one wow fadeInLeft"
+                            data-wow-delay=".5s"
+                        >
+
+                        <img decoding="async" 
+                            src="/agents/" 
+                            width="220" 
+                            alt=""
+                            class="two wow fadeInLeft"
+                            data-wow-delay=".5s"
+                        >
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- wpr banner area end -->
+
+        				</div>
+				</div>
+				</div>
+		<div class="elementor-element elementor-element-f616e9b e-con-full e-flex e-con e-parent" data-id="f616e9b" data-element_type="container" data-e-type="container">
+		<div class="elementor-element elementor-element-0aab062 e-con e-atomic-element e-div-block-base " data-id="0aab062" data-element_type="e-div-block" data-e-type="e-div-block" data-interaction-id="0aab062">
+    		<div class="elementor-element elementor-element-36b132a elementor-widget elementor-widget-html" data-id="36b132a" data-element_type="widget" data-e-type="widget" data-widget_type="html.default">
+					<div class="ax-wrap" id="axWrap">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Urbanist:wght@400;500;600;700&display=swap');
+  </style>
+
+  <!-- ============ HEADER ============ -->
+  <header class="ax-head">
+    <div class="ax-head-left">
+      <div class="ax-eyebrow">Our Agents</div>
+      <h2 class="ax-title">Nine specialists.<br><em>One delivery pipeline.</em></h2>
+    </div>
+    <div class="ax-head-right">
+      <p class="ax-lede">Each agent owns a stage of the lifecycle — comprehension, design, build, verification, governance — and every hand-off is auditable.</p>
+      <div class="ax-counter" aria-hidden="true">
+        <span id="axCounterNow">01</span>
+        <span class="ax-counter-rule"></span>
+        <span class="ax-counter-total">09</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ BODY ============ -->
+  <div class="ax-body">
+
+    <!-- Index rail -->
+    <nav class="ax-index" id="axIndex" aria-label="Agents" role="tablist" aria-orientation="vertical"></nav>
+
+    <!-- Stage -->
+    <div class="ax-stage">
+      <figure class="ax-visual" id="axVisual" aria-hidden="true">
+        <div class="ax-visual-img" id="axVisualImg"></div>
+        <div class="ax-visual-wash"></div>
+        <div class="ax-visual-name" id="axVisualName"></div>
+      </figure>
+
+      <div class="ax-detail" id="axDetail" role="tabpanel" tabindex="0">
+        <p class="ax-tagline" data-reveal><span id="axTagline"></span></p>
+        <p class="ax-desc" data-reveal id="axDesc"></p>
+
+        <div class="ax-io" data-reveal>
+          <div class="ax-io-col">
+            <div class="ax-io-label">Consumes</div>
+            <ul class="ax-io-list" id="axInput"></ul>
+          </div>
+          <div class="ax-io-col">
+            <div class="ax-io-label">Produces</div>
+            <ul class="ax-io-list" id="axOutput"></ul>
+          </div>
+        </div>
+
+        <a class="ax-cta" href="/agents/#" id="axCta" data-reveal>
+          <span>Read the documentation</span>
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+/* ================================================================
+   SYNTHETIX — AGENT INDEX
+   Editorial index rail · cinematic stage · restrained motion
+   ================================================================ */
+
+.ax-wrap {
+  --ax-ink:      #0B0F17;
+  --ax-ink-soft: #5A6172;
+  --ax-hair:     rgba(11, 15, 23, 0.12);
+  --ax-hair-lt:  rgba(11, 15, 23, 0.07);
+  --ax-paper:    #FFFFFF;
+  --ax-blue:     #2563EB;
+  --ax-ease:     cubic-bezier(0.22, 1, 0.36, 1);
+
+  font-family: 'Urbanist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--ax-paper);
+  color: var(--ax-ink);
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(56px, 9vw, 120px) clamp(20px, 4.5vw, 56px);
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+.ax-wrap *, .ax-wrap *::before, .ax-wrap *::after { box-sizing: border-box; }
+
+/* ---------- Header ---------- */
+.ax-head {
+  display: grid;
+  grid-template-columns: 1fr minmax(260px, 380px);
+  gap: clamp(28px, 5vw, 96px);
+  align-items: end;
+  padding-bottom: clamp(32px, 4vw, 56px);
+  border-bottom: 1px solid var(--ax-hair);
+}
+
+.ax-eyebrow {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ax-blue);
+  margin-bottom: clamp(16px, 2vw, 24px);
+}
+
+.ax-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: clamp(34px, 5.2vw, 64px);
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+.ax-title em {
+  font-style: normal;
+  color: var(--ax-ink-soft);
+}
+
+.ax-lede {
+  font-size: 15.5px;
+  line-height: 1.65;
+  color: var(--ax-ink-soft);
+  margin: 0 0 28px;
+  max-width: 36ch;
+}
+
+.ax-counter {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+.ax-counter-rule {
+  flex: 1;
+  height: 1px;
+  background: var(--ax-hair);
+  position: relative;
+  overflow: hidden;
+}
+.ax-counter-rule::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--ax-ink);
+  transform-origin: left;
+  transform: scaleX(var(--ax-progress, 0.111));
+  transition: transform 0.7s var(--ax-ease);
+}
+.ax-counter-total { color: var(--ax-ink-soft); }
+
+/* ---------- Body grid ---------- */
+.ax-body {
+  display: grid;
+  grid-template-columns: minmax(220px, 280px) 1fr;
+  gap: clamp(32px, 4.5vw, 72px);
+  padding-top: clamp(28px, 3.5vw, 48px);
+}
+
+/* ---------- Index rail ---------- */
+.ax-index {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+}
+.ax-row {
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid var(--ax-hair-lt);
+  width: 100%;
+  flex: 1 1 auto;
+  min-height: 52px;
+  text-align: left;
+  cursor: pointer;
+  padding: 12px 2px;
+  display: grid;
+  grid-template-columns: 34px 1fr auto;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Space Grotesk', sans-serif;
+  color: var(--ax-ink-soft);
+  transition: color 0.35s var(--ax-ease), padding-left 0.45s var(--ax-ease);
+  position: relative;
+}
+.ax-row:first-child { border-top: 1px solid var(--ax-hair-lt); }
+
+.ax-row:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.ax-row:focus-visible {
+  outline: 2px solid var(--ax-blue) !important;
+  outline-offset: -2px;
+  box-shadow: none;
+}
+
+.ax-row-num {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  transition: color 0.35s var(--ax-ease);
+}
+.ax-row-name {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  transition: letter-spacing 0.45s var(--ax-ease);
+}
+.ax-row-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--ax-blue);
+  align-self: center;
+  opacity: 0;
+  transform: scale(0.4);
+  transition: opacity 0.35s var(--ax-ease), transform 0.45s var(--ax-ease);
+}
+
+.ax-row:hover { color: var(--ax-ink); }
+
+.ax-row[aria-selected="true"] {
+  color: var(--ax-ink);
+  padding-left: 10px;
+}
+.ax-row[aria-selected="true"] .ax-row-num { color: var(--ax-blue); }
+.ax-row[aria-selected="true"] .ax-row-name { letter-spacing: 0.03em; font-weight: 700; }
+.ax-row[aria-selected="true"] .ax-row-dot { opacity: 1; transform: scale(1); }
+
+.ax-row:focus-visible {
+  outline: 2px solid var(--ax-blue);
+  outline-offset: -2px;
+}
+
+/* ---------- Stage ---------- */
+.ax-stage {
+  display: grid;
+  grid-template-columns: 1fr minmax(280px, 380px);
+  gap: clamp(28px, 4vw, 56px);
+  align-items: stretch;
+  min-width: 0;
+}
+
+/* Visual — portrait plate (source images are 1000×1200, 5:6) */
+.ax-visual {
+  order: 2;
+  margin: 0;
+  position: relative;
+  aspect-ratio: 5 / 6;
+  align-self: center;
+  width: 100%;
+  overflow: hidden;
+  background: #0E1420;
+  border-radius: 2px;
+}
+
+.ax-visual-img {
+  position: absolute;
+  inset: -4%;
+  background-size: cover;
+  background-position: center;
+  filter: saturate(0.92) contrast(1.04) brightness(0.9);
+  transform: scale(1.06) translate(var(--ax-px, 0), var(--ax-py, 0));
+  transition: transform 1.1s var(--ax-ease);
+  will-change: transform, clip-path;
+}
+
+.ax-visual-wash {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(115deg, rgba(11,15,23,0.45) 0%, rgba(11,15,23,0.08) 55%, rgba(11,15,23,0) 100%),
+    linear-gradient(to bottom, rgba(11,15,23,0.6), rgba(11,15,23,0) 40%);
+}
+
+.ax-visual-name {
+  position: absolute;
+  left: clamp(18px, 2vw, 26px);
+  top: clamp(16px, 2vw, 24px);
+  right: clamp(18px, 2vw, 26px);
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: clamp(26px, 3vw, 40px);
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  color: #F5F6F8;
+  text-transform: capitalize;
+  user-select: none;
+}
+
+/* wipe-in on change */
+.ax-visual.ax-swap .ax-visual-img {
+  animation: axWipe 0.9s var(--ax-ease) both;
+}
+.ax-visual.ax-swap .ax-visual-name {
+  animation: axNameUp 0.85s var(--ax-ease) both;
+}
+@keyframes axWipe {
+  from { clip-path: inset(0 100% 0 0); transform: scale(1.14); }
+  to   { clip-path: inset(0 0 0 0);   transform: scale(1.06); }
+}
+@keyframes axNameUp {
+  from { opacity: 0; transform: translateY(-0.4em); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Detail */
+.ax-detail { order: 1; min-width: 0; outline: none; }
+.ax-detail:focus-visible { outline: 2px solid var(--ax-blue); outline-offset: 6px; }
+
+.ax-tagline {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ax-blue);
+  margin: 0 0 14px;
+}
+
+.ax-desc {
+  font-size: clamp(16.5px, 1.6vw, 19px);
+  line-height: 1.6;
+  font-weight: 500;
+  color: var(--ax-ink);
+  max-width: 62ch;
+  margin: 0 0 clamp(28px, 3.5vw, 40px);
+}
+
+.ax-io {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: clamp(24px, 3vw, 48px);
+  margin-bottom: clamp(28px, 3.5vw, 40px);
+}
+
+.ax-io-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ax-ink-soft);
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--ax-hair);
+  margin-bottom: 4px;
+}
+
+.ax-io-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.ax-io-list li {
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--ax-ink-soft);
+  padding: 10px 0;
+  border-bottom: 1px solid var(--ax-hair-lt);
+}
+.ax-io-list li:last-child { border-bottom: 0; }
+
+.ax-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--ax-ink);
+  text-decoration: none;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--ax-ink);
+  transition: color 0.3s var(--ax-ease), border-color 0.3s var(--ax-ease), gap 0.3s var(--ax-ease);
+}
+.ax-cta:hover { color: var(--ax-blue); border-color: var(--ax-blue); gap: 14px; }
+.ax-cta:focus-visible { outline: 2px solid var(--ax-blue); outline-offset: 4px; }
+.ax-cta svg { transition: transform 0.3s var(--ax-ease); }
+.ax-cta:hover svg { transform: translate(2px, -2px); }
+
+/* staggered reveal on switch */
+[data-reveal] {
+  opacity: 1;
+  transform: none;
+}
+.ax-detail.ax-swap [data-reveal] {
+  animation: axRise 0.7s var(--ax-ease) both;
+}
+.ax-detail.ax-swap [data-reveal]:nth-child(1) { animation-delay: 0.05s; }
+.ax-detail.ax-swap [data-reveal]:nth-child(2) { animation-delay: 0.12s; }
+.ax-detail.ax-swap [data-reveal]:nth-child(3) { animation-delay: 0.19s; }
+.ax-detail.ax-swap [data-reveal]:nth-child(4) { animation-delay: 0.26s; }
+@keyframes axRise {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 920px) {
+  .ax-head { grid-template-columns: 1fr; align-items: start; }
+  .ax-counter { max-width: 240px; }
+
+  .ax-body { grid-template-columns: 1fr; gap: 28px; }
+
+  .ax-stage { grid-template-columns: 1fr; }
+  .ax-visual {
+    order: 1;
+    aspect-ratio: 4 / 3;
+    max-height: 380px;
+  }
+  .ax-visual .ax-visual-img { background-position: center 25%; }
+  .ax-detail { order: 2; }
+
+  .ax-index {
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 0;
+    border-bottom: 1px solid var(--ax-hair-lt);
+    scrollbar-width: none;
+  }
+  .ax-index::-webkit-scrollbar { display: none; }
+
+  .ax-row,
+  .ax-row:first-child {
+    border: 0;
+    flex: 0 0 auto;
+    min-height: 0;
+    grid-template-columns: auto auto;
+    padding: 12px 16px 14px 0;
+  }
+  .ax-row .ax-row-dot { display: none; }
+  .ax-row[aria-selected="true"] { padding-left: 0; }
+  .ax-row[aria-selected="true"]::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 16px; bottom: -1px;
+    height: 2px;
+    background: var(--ax-ink);
+  }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .ax-wrap *, .ax-wrap *::before, .ax-wrap *::after {
+    animation-duration: 0.001s !important;
+    transition-duration: 0.001s !important;
+  }
+}
+</style>
+
+<script>
+(function () {
+  'use strict';
+
+  var AGENTS = [
+    {
+      name: 'Cartographer',
+      url: '#cartographer',
+      image: '/wp-content/uploads/2026/07/11362.jpg',
+      tagline: 'Discover · Analyze · Comprehend',
+      desc: 'The first agent to engage on any program. Cartographer performs path-level analysis across source code, infrastructure, network topology, integration surfaces, and data lineage — and materializes that understanding into the Atlas knowledge graph.',
+      input: ['Source repositories across all supported languages', 'IaC modules, Helm charts, Terraform state', 'Observability feeds and integration catalogs'],
+      output: ['The Atlas knowledge graph, scoped to the engagement', 'Path-level comprehension with confidence scoring', 'Risk vectors flagged for downstream review']
+    },
+    {
+      name: 'Architect',
+      url: '#architect',
+      image: '/wp-content/uploads/2026/07/2151908070.jpg',
+      tagline: 'Design · Structure · Strategize',
+      desc: 'Architect consumes the Atlas graph and generates a target-state architecture that reflects the actual system, applying your platform contracts and technology standards to produce artifacts defensible at the CTO level.',
+      input: ['Atlas knowledge graph from Cartographer', 'Business brief and capability requirements', 'Approved platform standards'],
+      output: ['Target-state architecture, ready for sign-off', 'Risk register with mitigation options', 'Wave sequencing passed to Estimator']
+    },
+    {
+      name: 'Estimator',
+      url: '#estimator',
+      image: '/wp-content/uploads/2026/07/2151966683.jpg',
+      tagline: 'Size · Plan · Forecast',
+      desc: 'Estimator sizes the delivery program against the Architect\u2019s plan, applying acceleration factors at the work-package level to produce a risk-adjusted timeline your CFO and PMO can stand behind.',
+      input: ['Architect\u2019s target-state plan and sequencing', 'Atlas graph for complexity assessment', 'Historical run telemetry'],
+      output: ['Work breakdown with acceleration factors', 'Risk-adjusted timeline and cost forecast', 'Budget projections for PMO and CFO']
+    },
+    {
+      name: 'Critic',
+      url: '#critic',
+      image: '/wp-content/uploads/2026/07/2151015337.jpg',
+      tagline: 'Review · Audit · Validate',
+      desc: 'Critic operates across the entire pipeline, reviewing every agent output for hallucination, scope drift, and structural instability before any artifact reaches a human reviewer.',
+      input: ['Outputs from every agent at each stage', 'Atlas graph as the grounding baseline', 'Your organizational standards'],
+      output: ['Pass or revise verdict with confidence score', 'Targeted revision instructions', 'Escalation when confidence falls below threshold']
+    },
+    {
+      name: 'Conductor',
+      url: '#conductor',
+      image: '/wp-content/uploads/2026/07/4589.jpg',
+      tagline: 'Orchestrate · Coordinate · Narrate',
+      desc: 'Conductor owns the delivery rhythm of the program, tracking module state across waves and translating that picture into stakeholder communication calibrated by audience and urgency.',
+      input: ['Orchestrator state across active modules', 'Risk register from Architect and Estimator', 'Signals from PM and observability tools'],
+      output: ['Real-time delivery dashboard', 'Stakeholder updates by audience', 'Dependency conflicts surfaced for decision']
+    },
+    {
+      name: 'Examiner',
+      url: '#examiner',
+      image: '/wp-content/uploads/2026/07/2641.jpg',
+      tagline: 'Test · Verify · Validate',
+      desc: 'Examiner generates and executes tests across unit, integration, and contract surfaces, with assertions grounded in production traces rather than generated boilerplate.',
+      input: ['Artifacts from the Builder swarm', 'Behavioral specifications from Architect', 'Production traces where available'],
+      output: ['Test suite with meaningful assertions', 'Coverage report against gating thresholds', 'Pass/fail verdict with diagnostic context']
+    },
+    {
+      name: 'Gatekeeper',
+      url: '#gatekeeper',
+      image: '/wp-content/uploads/2026/07/2151997028.jpg',
+      tagline: 'Enforce · Classify · Govern',
+      desc: 'Gatekeeper is the governance enforcement layer at the close of the pipeline, applying four-tier change classification and producing a signed evidence chain on every promotion decision.',
+      input: ['Verified artifacts from Examiner', 'Your policy library and compliance posture', 'Change classification rules'],
+      output: ['Promote, hold, or reject verdict', 'Signed evidence chain per decision', 'Audit-ready artifact for regulators']
+    },
+    {
+      name: 'Scout',
+      url: '#scout',
+      image: '/wp-content/uploads/2026/07/1033045.jpg',
+      tagline: 'Research · Brief · Inform',
+      desc: 'Scout is the research and intelligence function of the platform, producing regulatory analysis, technology comparisons, and steering committee briefings with provenance on every claim.',
+      input: ['Research mandates from stakeholders', 'Approved internal and external sources', 'Audience and format requirements'],
+      output: ['Briefs with source provenance', 'Decks and comparison matrices', 'Competitive and compliance analysis']
+    },
+    {
+      name: 'Mentor',
+      url: '#mentor',
+      image: '/wp-content/uploads/2026/07/2151966702.jpg',
+      tagline: 'Guide · Capture · Retain',
+      desc: 'Mentor is the engineer-facing agent, operating in the IDE and team chat, capturing tribal knowledge as it\u2019s used and converting it into reusable institutional intelligence.',
+      input: ['Engineer questions and code context', 'Atlas graph and institutional memory', 'Documentation and prior program artifacts'],
+      output: ['In-context guidance in IDE or chat', 'Captured knowledge persisted to platform', 'Structured onboarding for new engineers']
+    }
+  ];
+
+  var indexEl   = document.getElementById('axIndex');
+  var visualEl  = document.getElementById('axVisual');
+  var imgEl     = document.getElementById('axVisualImg');
+  var nameEl    = document.getElementById('axVisualName');
+  var detailEl  = document.getElementById('axDetail');
+  var taglineEl = document.getElementById('axTagline');
+  var descEl    = document.getElementById('axDesc');
+  var inputEl   = document.getElementById('axInput');
+  var outputEl  = document.getElementById('axOutput');
+  var ctaEl     = document.getElementById('axCta');
+  var counterEl = document.getElementById('axCounterNow');
+  var wrapEl    = document.getElementById('axWrap');
+
+  var active = 0;
+  var rows = [];
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Preload images so wipes never reveal a blank panel */
+  AGENTS.forEach(function (a) { var i = new Image(); i.src = a.image; });
+
+  function pad(n) { return n < 10 ? '0' + n : '' + n; }
+
+  function li(items) {
+    return items.map(function (t) {
+      var el = document.createElement('li');
+      el.textContent = t;
+      return el;
+    });
+  }
+
+  function renderDetail(animate) {
+    var a = AGENTS[active];
+
+    imgEl.style.backgroundImage = 'url("' + a.image + '")';
+    nameEl.textContent = a.name;
+    taglineEl.textContent = a.tagline;
+    descEl.textContent = a.desc;
+    ctaEl.setAttribute('href', a.url || '#');
+    ctaEl.setAttribute('aria-label', 'Read the documentation for ' + a.name);
+
+    inputEl.innerHTML = '';
+    outputEl.innerHTML = '';
+    li(a.input).forEach(function (n) { inputEl.appendChild(n); });
+    li(a.output).forEach(function (n) { outputEl.appendChild(n); });
+
+    counterEl.textContent = pad(active + 1);
+    document.querySelector('.ax-counter-rule')
+      .style.setProperty('--ax-progress', ((active + 1) / AGENTS.length).toFixed(3));
+
+    if (animate && !reduceMotion) {
+      visualEl.classList.remove('ax-swap');
+      detailEl.classList.remove('ax-swap');
+      /* force reflow to restart keyframes */
+      void visualEl.offsetWidth;
+      visualEl.classList.add('ax-swap');
+      detailEl.classList.add('ax-swap');
+    }
+  }
+
+  function select(i, animate) {
+    if (i === active && animate) return;
+    active = (i + AGENTS.length) % AGENTS.length;
+    rows.forEach(function (r, idx) {
+      var sel = idx === active;
+      r.setAttribute('aria-selected', sel ? 'true' : 'false');
+      r.tabIndex = sel ? 0 : -1;
+    });
+    renderDetail(animate !== false);
+  }
+
+  /* Build index rail */
+  AGENTS.forEach(function (a, i) {
+    var b = document.createElement('button');
+    b.className = 'ax-row';
+    b.type = 'button';
+    b.setAttribute('role', 'tab');
+    b.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+    b.tabIndex = i === 0 ? 0 : -1;
+    b.innerHTML =
+      '<span class="ax-row-num">' + pad(i + 1) + '</span>' +
+      '<span class="ax-row-name">' + a.name + '</span>' +
+      '<span class="ax-row-dot"></span>';
+
+    b.addEventListener('click', function () { select(i); });
+    b.addEventListener('keydown', function (e) {
+      var next = null;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowRight') next = active + 1;
+      if (e.key === 'ArrowUp'   || e.key === 'ArrowLeft')  next = active - 1;
+      if (e.key === 'Home') next = 0;
+      if (e.key === 'End')  next = AGENTS.length - 1;
+      if (next !== null) {
+        e.preventDefault();
+        select(next);
+        rows[active].focus();
+        if (rows[active].scrollIntoView) {
+          rows[active].scrollIntoView({ block: 'nearest', inline: 'nearest' });
+        }
+      }
+    });
+
+    indexEl.appendChild(b);
+    rows.push(b);
+  });
+
+  /* Cursor-aware parallax on the visual — a few px, nothing showy */
+  if (!reduceMotion && window.matchMedia('(pointer: fine)').matches) {
+    visualEl.addEventListener('mousemove', function (e) {
+      var r = visualEl.getBoundingClientRect();
+      var x = ((e.clientX - r.left) / r.width - 0.5) * -10;
+      var y = ((e.clientY - r.top) / r.height - 0.5) * -8;
+      imgEl.style.setProperty('--ax-px', x.toFixed(1) + 'px');
+      imgEl.style.setProperty('--ax-py', y.toFixed(1) + 'px');
+    });
+    visualEl.addEventListener('mouseleave', function () {
+      imgEl.style.setProperty('--ax-px', '0px');
+      imgEl.style.setProperty('--ax-py', '0px');
+    });
+  }
+
+  select(0, false);
+})();
+</script>				</div>
+		
+</div>
+		</div>
+				</div>
+		
+
+<div class='footer-width-fixer'><style>.elementor-290 .elementor-element.elementor-element-5e51681{--display:flex;--margin-top:0px;--margin-bottom:100px;--margin-left:0px;--margin-right:0px;--padding-top:0px;--padding-bottom:0px;--padding-left:0px;--padding-right:0px;}.elementor-290 .elementor-element.elementor-element-c57a553{--display:flex;--justify-content:space-between;--margin-top:-209px;--margin-bottom:1px;--margin-left:1px;--margin-right:1px;}.elementor-290 .elementor-element.elementor-element-c57a553.e-con{--align-self:center;}.elementor-290 .elementor-element.elementor-element-89d5198{margin:-60px 0px calc(var(--kit-widget-spacing, 0px) + 0px) 0px;}@media(min-width:768px){.elementor-290 .elementor-element.elementor-element-c57a553{--content-width:659px;}}</style>		<div data-elementor-type="wp-post" data-elementor-id="290" class="elementor elementor-290">
+				<div class="elementor-element elementor-element-5e51681 e-con-full e-flex e-con e-parent" data-id="5e51681" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-5d9f5a8 elementor-widget elementor-widget-agenio_cta_widget" data-id="5d9f5a8" data-element_type="widget" data-e-type="widget" id="footer-button" data-widget_type="agenio_cta_widget.default">
+				<div class="elementor-widget-container">
+					        <!-- wpr cta area start -->
+        <section class="wpr-cta-area">
+            <div class="container">
+                <div class="section-inner border-1">
+
+                    <div class="section-title-area">
+                                                    <h2 class="section-title">LET&#039;S BUILD<br />
+YOUR AI SYSTEM</h2>
+                        
+                        
+                        <!-- Right arrow track -->
+                                                <div class="arrow-track right">
+                                                            <div class="arrow">
+                                    <img src="../wp-content/themes/agenio/assets/images/cta/arrow-left.svg" alt="">
+                                </div>
+                                                            <div class="arrow">
+                                    <img src="../wp-content/themes/agenio/assets/images/cta/arrow-left.svg" alt="">
+                                </div>
+                                                            <div class="arrow">
+                                    <img src="../wp-content/themes/agenio/assets/images/cta/arrow-left.svg" alt="">
+                                </div>
+                                                    </div>
+                        
+                        <!-- Left arrow track -->
+                                                <div class="arrow-track left">
+                                                            <div class="arrow">
+                                    <img src="../wp-content/themes/agenio/assets/images/cta/arrow-right.svg" alt="">
+                                </div>
+                                                            <div class="arrow">
+                                    <img src="../wp-content/themes/agenio/assets/images/cta/arrow-right.svg" alt="">
+                                </div>
+                                                            <div class="arrow">
+                                    <img src="../wp-content/themes/agenio/assets/images/cta/arrow-right.svg" alt="">
+                                </div>
+                                                    </div>
+                                            </div>
+
+                                            <div class="bg-shape">
+                            <img src="../wp-content/themes/agenio/assets/images/cta/grid.svg" alt="">
+                        </div>
+                    
+                    <div class="section-bottom-shape">
+                                                                            <span class="tag left">INTELLIGENT AUTOMATION</span>
+                                                                            <span class="tag right">GLOBAL SUPPORT</span>
+                                            </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- wpr cta area end -->
+        				</div>
+				</div>
+				</div>
+		<div class="elementor-element elementor-element-c57a553 e-flex e-con-boxed e-con e-parent" data-id="c57a553" data-element_type="container" data-e-type="container">
+					<div class="e-con-inner">
+				<div class="elementor-element elementor-element-89d5198 elementor-widget elementor-widget-html" data-id="89d5198" data-element_type="widget" data-e-type="widget" data-widget_type="html.default">
+					<div class="button-area">
+                            <a href="/contact/" class="wpr-btn btn-white">
+                                Request a Demo                            </a>
+                            <a href="/solutions/" class="wpr-btn btn-primary with-icon">
+                                <div class="inner">
+                                    <div class="icon">
+                                                                                    <span>
+                                                <img decoding="async" src="../wp-content/themes/agenio/assets/images/icon/button-arrow.svg" alt="">
+                                            </span>
+                                                                                    <span>
+                                                <img decoding="async" src="../wp-content/themes/agenio/assets/images/icon/button-arrow.svg" alt="">
+                                            </span>
+                                                                                    <span>
+                                                <img decoding="async" src="../wp-content/themes/agenio/assets/images/icon/button-arrow.svg" alt="">
+                                            </span>
+                                                                                    <span>
+                                                <img decoding="async" src="../wp-content/themes/agenio/assets/images/icon/button-arrow.svg" alt="">
+                                            </span>
+                                                                                    <span>
+                                                <img decoding="async" src="../wp-content/themes/agenio/assets/images/icon/button-arrow.svg" alt="">
+                                            </span>
+                                                                                    <span>
+                                                <img decoding="async" src="../wp-content/themes/agenio/assets/images/icon/button-arrow.svg" alt="">
+                                            </span>
+                                                                            </div>
+                                </div>
+                                Learn more                            </a>
+                        </div>				</div>
+					</div>
+				</div>
+				</div>
+		</div>		<footer itemtype="https://schema.org/WPFooter" itemscope="itemscope" id="colophon" role="contentinfo">
+			<div class='footer-width-fixer'><style>.elementor-46 .elementor-element.elementor-element-fa6b53b{--display:flex;--margin-top:10px;--margin-bottom:0px;--margin-left:0px;--margin-right:1px;--padding-top:0px;--padding-bottom:0px;--padding-left:0px;--padding-right:0px;}.elementor-46 .elementor-element.elementor-element-40b8701{--display:flex;--margin-top:0px;--margin-bottom:0px;--margin-left:0px;--margin-right:0px;--padding-top:0px;--padding-bottom:0px;--padding-left:0px;--padding-right:0px;}.elementor-46 .elementor-element.elementor-element-ae93211 > .elementor-widget-container{margin:0px 0px 0px 0px;padding:0px 0px 0px 0px;}.elementor-46 .elementor-element.elementor-element-58faa94{width:100%;max-width:100%;}.elementor-46 .elementor-element.elementor-element-58faa94.elementor-element{--flex-grow:0;--flex-shrink:0;}</style>		<div data-elementor-type="wp-post" data-elementor-id="46" class="elementor elementor-46">
+				<div class="elementor-element elementor-element-fa6b53b e-con-full e-flex e-con e-parent" data-id="fa6b53b" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-b51ed83 elementor-widget elementor-widget-agenio_contact_widget" data-id="b51ed83" data-element_type="widget" data-e-type="widget" data-widget_type="agenio_contact_widget.default">
+				<div class="elementor-widget-container">
+					        <!-- wpr contact area start -->
+        <section id="contact" class="wpr-contact-area mb--16">
+            <div class="container">
+                <div class="section-inner">
+
+                    <!-- Left Content -->
+                    <div class="left-content-area">
+
+                        <!-- Get In Touch -->
+                        <div class="get-in-touch">
+                            <p class="sub-title">CONTACT</p>
+                            <ul>
+                                                                <li>
+                                    <a href="mailto:connect@synthetixlabs.ai">
+                                        connect@synthetixlabs.ai                                    </a>
+                                </li>
+                                                                <li>
+                                    <a href="tel:+91678-514-3500">
+                                        678-514-3500                                    </a>
+                                </li>
+                                                            </ul>
+                        </div>
+
+                        <!-- Offices -->
+                        <div class="location-area">
+                            <p class="sub-title">OFFICES</p>
+                            <ul>
+                                                                <li>
+                                    <h2 class="h4">Atlanta</h2>
+                                    <p>3060 Kimball Bridge Road<br />
+Suite 200<br />
+Alpharetta, GA 30022;</p>
+                                </li>
+                                                                <li>
+                                    <h2 class="h4">California</h2>
+                                    <p>925 Highland Pointe Drive<br />
+Suite 340<br />
+Roseville, CA 95678</p>
+                                </li>
+                                                                <li>
+                                    <h2 class="h4">Bengaluru</h2>
+                                    <p>6th Floor, 144, MSR North Tower,<br />
+Outer Ring Rd, MS Ramaiah North<br />
+City, Manayata Tech Park, Nagavara,<br />
+Bengaluru, Karnataka - 560045 </p>
+                                </li>
+                                                            </ul>
+                        </div>
+
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="contact-form-area">
+                        
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- wpr contact area end -->
+        				</div>
+				</div>
+				</div>
+		<div class="elementor-element elementor-element-40b8701 e-con-full e-flex e-con e-parent" data-id="40b8701" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-ae93211 elementor-widget elementor-widget-agenio_footer_widget" data-id="ae93211" data-element_type="widget" data-e-type="widget" id="last-footer" data-widget_type="agenio_footer_widget.default">
+				<div class="elementor-widget-container">
+					        <!-- wpr footer area start -->
+        <div class="wpr-footer-area">
+            <div class="container">
+                <div class="section-inner border-1">
+
+                    <!-- Footer Top Nav -->
+                    <div class="footer-top">
+                        <ul>
+                                                                                            <li>
+                                    <a href="/company/">
+                                        About Us                                    </a>
+                                </li>
+                                                                                                <li class="square-dot"></li>
+                                                                <li>
+                                    <a href="/solutions/">
+                                        Services                                    </a>
+                                </li>
+                                                                                                <li class="square-dot"></li>
+                                                                <li>
+                                    <a href="/resources/case-study/">
+                                        Projects                                    </a>
+                                </li>
+                                                                                                <li class="square-dot"></li>
+                                                                <li>
+                                    <a href="../index.html#pricing">
+                                        Pricing Plan                                    </a>
+                                </li>
+                                                    </ul>
+                    </div>
+
+                    <!-- Footer Logo -->
+                    <div class="footer-logo-area square-dot">
+                        <a href="../index.html">
+                            <img src="../wp-content/themes/agenio/assets/images/logo/footer-logo.svg" alt="Synthetix Labs">
+                        </a>
+                        <div class="shape one">
+                            <img src="../wp-content/themes/agenio/assets/images/logo/shape-01.svg" alt="">
+                        </div>
+                        <div class="shape two">
+                            <img src="../wp-content/themes/agenio/assets/images/logo/shape-02.svg" alt="">
+                        </div>
+                        <span class="square-shape top-left"></span>
+                        <span class="square-shape top-right"></span>
+                        <span class="square-shape bottom-left"></span>
+                        <span class="square-shape bottom-right"></span>
+                    </div>
+
+                    <!-- Copyright Area -->
+                    <div class="copyright-area">
+
+                        <!-- Social Links -->
+                        <div class="left-social-area">
+                            <ul>
+                                                                <li>
+                                    <a href="/agents/#">
+                                        Instagram                                    </a>
+                                </li>
+                                                                <li>
+                                    <a href="/agents/#">
+                                        Linkedin                                    </a>
+                                </li>
+                                                                <li>
+                                    <a href="/agents/#">
+                                        Dribbble                                    </a>
+                                </li>
+                                                                <li>
+                                    <a href="/agents/#">
+                                        Behance                                    </a>
+                                </li>
+                                                            </ul>
+                        </div>
+
+                        <!-- Copyright -->
+                        <p class="copyright">
+                            &copy; 2026 Agenio. All Rights Reserved                        </p>
+
+                        <!-- Scroll To Top -->
+                        <button class="scroll-top-btn">
+                            Back to Top                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 3.29688L7.64062 3.64062L1.39062 9.89062L2.10938 10.6094L8 4.71875L13.8906 10.6094L14.6094 9.89062L8.35938 3.64062L8 3.29688Z" fill="black" />
+                            </svg>
+                        </button>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- wpr footer area end -->
+        				</div>
+				</div>
+				</div>
+		<div class="elementor-element elementor-element-edeb45b e-con e-atomic-element e-flexbox-base e-1c0d0dd " data-id="edeb45b" data-element_type="e-flexbox" data-e-type="e-flexbox" data-interaction-id="edeb45b">
+    <div class="elementor-element elementor-element-33838b2 e-con e-atomic-element e-flexbox-base " data-id="33838b2" data-element_type="e-flexbox" data-e-type="e-flexbox" data-interaction-id="33838b2">
+    		<div class="elementor-element elementor-element-58faa94 elementor-widget__width-inherit elementor-widget elementor-widget-html" data-id="58faa94" data-element_type="widget" data-e-type="widget" data-widget_type="html.default">
+					<div class="cf-bottom">
+    <p class="cf-copyright">
+        © 2026 synthetixlabs, Inc. All rights reserved.</p>
+
+    <nav class="cf-legal" aria-label="Legal">
+        <a href="../wp-content/uploads/2026/07/gdpr-v1-6-072024.pdf" target="_blank" rel="noopener">GDPR</a>
+        <a href="../wp-content/uploads/2026/07/ccpa-cra-v1-3-072024.pdf" target="_blank" rel="noopener">CCPA/CPRA</a>
+        <a href="../wp-content/uploads/2026/07/web-privacy-policy.pdf" target="_blank" rel="noopener">Privacy</a>
+        <a href="https://www.microsoft.com/en-us/privacy/privacystatement" target="_blank" rel="noopener">Microsoft Privacy Statement</a>
+        <a href="../wp-content/uploads/2026/07/privacy-policy-introduction-v2-072024.pdf" target="_blank" rel="noopener">Privacy Introduction</a>
+          <a href="../wp-content/uploads/2026/07/pci-072025-reasonable-accomodation-policy.pdf" target="_blank" rel="noopener">Reasonable Accommodation Policy</a>
+        <a href="/agents/#" data-action="cookie-prefs">Cookie Preferences</a>
+    </nav>
+</div>				</div>
+		
+</div>
+
+</div>
+		</div>
+		</div>		</footer>
+	</div><!-- #page -->
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/agenio/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+			<script>
+				const registerAllyAction = () => {
+					if ( ! window?.ElementorProFrontendConfig || ! window?.elementorFrontend?.utils?.urlActions ) {
+						return;
+					}
+
+					elementorFrontend.utils.urlActions.addAction( 'allyWidget:open', () => {
+						if (window?.ea11yWidget?.widget?.open) {
+							return window.ea11yWidget.widget.isOpen()
+								? window.ea11yWidget.widget.close()
+								: window.ea11yWidget.widget.open();
+						}
+					} );
+				};
+
+				const waitingLimit = 30;
+				let retryCounter = 0;
+
+				const waitForElementorPro = () => {
+					return new Promise( ( resolve ) => {
+						const intervalId = setInterval( () => {
+							if ( retryCounter === waitingLimit ) {
+								resolve( null );
+							}
+
+							retryCounter++;
+
+							if ( window.elementorFrontend && window?.elementorFrontend?.utils?.urlActions ) {
+								clearInterval( intervalId );
+								resolve( window.elementorFrontend );
+							}
+								}, 100 ); // Check every 100 milliseconds for availability of elementorFrontend
+					});
+				};
+
+				waitForElementorPro().then( () => { registerAllyAction(); });
+			</script>
+						<script>
+				const lazyloadRunObserver = () => {
+					const lazyloadBackgrounds = document.querySelectorAll( `.e-con.e-parent:not(.e-lazyloaded)` );
+					const lazyloadBackgroundObserver = new IntersectionObserver( ( entries ) => {
+						entries.forEach( ( entry ) => {
+							if ( entry.isIntersecting ) {
+								let lazyloadBackground = entry.target;
+								if( lazyloadBackground ) {
+									lazyloadBackground.classList.add( 'e-lazyloaded' );
+								}
+								lazyloadBackgroundObserver.unobserve( entry.target );
+							}
+						});
+					}, { rootMargin: '200px 0px 200px 0px' } );
+					lazyloadBackgrounds.forEach( ( lazyloadBackground ) => {
+						lazyloadBackgroundObserver.observe( lazyloadBackground );
+					} );
+				};
+				const events = [
+					'DOMContentLoaded',
+					'elementor/lazyload/observe',
+				];
+				events.forEach( ( event ) => {
+					document.addEventListener( event, lazyloadRunObserver );
+				} );
+			</script>
+			<script id="wp-hooks-js" src="../wp-includes/js/dist/hooks.min.js"></script>
+<script id="wp-i18n-js" src="../wp-includes/js/dist/i18n.min.js"></script>
+<script id="wp-i18n-js-after">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+//# sourceURL=wp-i18n-js-after
+</script>
+<script id="leadin-script-loader-js-js-extra">
+var leadin_wordpress = {"userRole":"visitor","pageType":"page","leadinPluginVersion":"11.3.51"};
+//# sourceURL=leadin-script-loader-js-js-extra
+</script>
+<script id="leadin-script-loader-js-js" src="https://js.hs-scripts.com/40221584.js?integration=WordPress&#038;ver=11.3.51"></script>
+<script id="angie-canvas-template-js-before">
+angieCanvasTemplateData = {"templateSlug":"angie-canvas"};
+//# sourceURL=angie-canvas-template-js-before
+</script>
+<script id="elementor-webpack-runtime-js" src="../wp-content/plugins/elementor/assets/js/webpack.runtime.min.js"></script>
+<script id="elementor-frontend-modules-js" src="../wp-content/plugins/elementor/assets/js/frontend-modules.min.js"></script>
+<script id="jquery-ui-core-js" src="../wp-includes/js/jquery/ui/core.min.js"></script>
+<script id="elementor-frontend-js-extra">
+var EAELImageMaskingConfig = {"svg_dir_url":"/wp-content/plugins/essential-addons-for-elementor-lite/assets/front-end/img/image-masking/svg-shapes/"};
+//# sourceURL=elementor-frontend-js-extra
+</script>
+<script id="elementor-frontend-js-before">
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnTwitter":"Share on Twitter","pinIt":"Pin it","download":"Download","downloadImage":"Download image","fullscreen":"Fullscreen","zoom":"Zoom","share":"Share","playVideo":"Play Video","previous":"Previous","next":"Next","close":"Close","a11yCarouselPrevSlideMessage":"Previous slide","a11yCarouselNextSlideMessage":"Next slide","a11yCarouselFirstSlideMessage":"This is the first slide","a11yCarouselLastSlideMessage":"This is the last slide","a11yCarouselPaginationBulletMessage":"Go to slide"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Mobile Portrait","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Landscape","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet Portrait","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Landscape","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}},"hasCustomBreakpoints":false},"version":"4.1.3","is_static":false,"experimentalFeatures":{"e_font_icon_svg":true,"additional_custom_breakpoints":true,"container":true,"e_optimized_markup":true,"e_pro_free_trial_popup":true,"nested-elements":true,"e_atomic_elements":true,"atomic_widgets_should_enforce_capabilities":true,"editor_mcp":true,"e_bc_migrations":true,"e_editor_design_system_panel":true,"e_classes":true,"global_classes_should_enforce_capabilities":true,"e_variables":true,"e_variables_manager":true,"e_opt_in_v4_page":true,"e_opt_in_v4":true,"e_components":true,"e_interactions":true,"e_widget_creation":true,"import-export-customization":true},"urls":{"assets":"\/wp-content\/plugins\/elementor\/assets\/","ajaxurl":"\/wp-admin\/admin-ajax.php","uploadUrl":"\/wp-content\/uploads"},"nonces":{"floatingButtonsClickTracking":"065cadef30","atomicFormsSendForm":"7c9c75e97f"},"swiperClass":"swiper","settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":70,"title":"agents%20%E2%80%93%20Synthetix%20Labs","excerpt":"","featuredImage":false}};
+//# sourceURL=elementor-frontend-js-before
+</script>
+<script id="elementor-frontend-js" src="../wp-content/plugins/elementor/assets/js/frontend.min.js"></script>
+<script id="bootstrap-js" src="../wp-content/themes/agenio/assets/js/plugins/bootstrap.min.js"></script>
+<script id="metismenu-js" src="../wp-content/themes/agenio/assets/js/plugins/metismenu.js"></script>
+<script id="jqueryui-js" src="../wp-content/themes/agenio/assets/js/vendor/jqueryui.js"></script>
+<script id="waypoint-js" src="../wp-content/themes/agenio/assets/js/vendor/waypoint.js"></script>
+<script id="swiper-js" src="../wp-content/plugins/elementor/assets/lib/swiper/v8/swiper.min.js"></script>
+<script id="gsap-js" src="../wp-content/themes/agenio/assets/js/plugins/gsap.min.js"></script>
+<script id="scrolltrigger-js" src="../wp-content/themes/agenio/assets/js/plugins/scrolltrigger.js"></script>
+<script id="smoothscroll-js" src="../wp-content/themes/agenio/assets/js/plugins/smoothscroll.js"></script>
+<script id="split-text-js" src="../wp-content/themes/agenio/assets/js/vendor/split-text.js"></script>
+<script id="split-type-js" src="../wp-content/themes/agenio/assets/js/vendor/split-type.js"></script>
+<script id="wow-js" src="../wp-content/themes/agenio/assets/js/vendor/wow.js"></script>
+<script id="text-plugin-js" src="../wp-content/themes/agenio/assets/js/vendor/text-plugin.js"></script>
+<script id="odometer-js" src="../wp-content/themes/agenio/assets/js/plugins/odometer.js"></script>
+<script id="agenio-contact-form-js" src="../wp-content/themes/agenio/assets/js/plugins/contact-form.js"></script>
+<script id="agenio-main-js" src="../wp-content/themes/agenio/assets/js/main.js"></script>
+<script id="eael-general-js-extra">
+var localize = {"ajaxurl":"/wp-admin/admin-ajax.php","nonce":"d0f0bbe39e","i18n":{"added":"Added ","compare":"Compare","loading":"Loading..."},"eael_translate_text":{"required_text":"is a required field","invalid_text":"Invalid","billing_text":"Billing","shipping_text":"Shipping","fg_mfp_counter_text":"of"},"page_permalink":"/agents/","cart_redirectition":"","cart_page_url":"","el_breakpoints":{"mobile":{"label":"Mobile Portrait","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Landscape","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet Portrait","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Landscape","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}}};
+//# sourceURL=eael-general-js-extra
+</script>
+<script id="eael-general-js" src="../wp-content/plugins/essential-addons-for-elementor-lite/assets/front-end/js/view/general.min.js"></script>
+</body>
+</html> 
