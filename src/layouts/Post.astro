@@ -15,6 +15,7 @@ import aHtml from './shell/post-a.html?raw';
 import bHtml from './shell/post-b.html?raw';
 import cHtml from './shell/post-c.html?raw';
 import dHtml from './shell/post-d.html?raw';
+import Seo from '../components/Seo.astro';
 
 interface Props {
   title: string;
@@ -24,11 +25,14 @@ interface Props {
   authorSlug?: string;
   date: Date;
   tags?: string[];
+  description?: string;
+  path?: string;
+  modified?: Date;
 }
 const {
   title, canonical, bodyClass,
   author = 'Nitin Sinha', authorSlug = 'nitin',
-  date, tags = [],
+  date, tags = [], description = '', path = '/', modified,
 } = Astro.props;
 
 const dateLabel = date.toLocaleDateString('en-US', {
@@ -51,6 +55,7 @@ const bWithCrumb = bHtml.replace(
 	<meta charset="UTF-8" />
 	<title set:html={title}></title>
 	<link rel="canonical" href={canonical} />
+	{description && <Seo title={title} description={description} path={path} type="article" published={date} modified={modified} author={author} tags={tags} />}
 	<Fragment set:html={headHtml} />
 </head>
 <body class={bodyClass}>

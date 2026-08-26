@@ -1,0 +1,85 @@
+---
+// Shared SEO head tags for every Astro-rendered page.
+//
+// The mirrored site shipped 0 of 39 pages with a meta description, OpenGraph,
+// Twitter card or structured data — so every link shared on LinkedIn, the
+// company's actual distribution channel, rendered as a bare URL.
+//
+// Putting this in a component rather than per-page means anything marketing
+// publishes through Keystatic inherits it automatically.
+import seo from '../../seo.config.json';
+
+interface Props {
+  title: string;
+  description: string;
+  path: string;                 // e.g. "/governance/"
+  type?: 'website' | 'article';
+  published?: Date;
+  modified?: Date;
+  author?: string;
+  tags?: string[];
+}
+const {
+  title, description, path,
+  type = 'website', published, modified, author, tags = [],
+} = Astro.props;
+
+// Google truncates around 155-160 characters. The collections' `excerpt` runs
+// longer because it also feeds listings, so trim only the meta description -
+// at a word boundary, not mid-word.
+const clip = (s: string, max = 155) => {
+  const one = s.replace(/\s+/g, ' ').trim();
+  if (one.length <= max) return one;
+  const cut = one.slice(0, max);
+  return cut.slice(0, cut.lastIndexOf(' ')).replace(/[,;:.\u2014-]$/, '') + '\u2026';
+};
+const metaDescription = clip(description);
+
+const base = seo.site.url.replace(/\/$/, '');
+const canonical = base + path;
+const image = base + seo.site.ogImage;
+
+const crumbName = title.split('|')[0].split('—')[0].trim();
+const jsonLd = type === 'article'
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: title,
+      description: metaDescription,
+      image,
+      datePublished: published?.toISOString().slice(0, 10),
+      dateModified: (modified ?? published)?.toISOString().slice(0, 10),
+      author: { '@type': 'Person', name: author ?? 'Nitin Sinha' },
+      publisher: {
+        '@type': 'Organization',
+        name: seo.site.name,
+        logo: { '@type': 'ImageObject', url: image },
+      },
+      mainEntityOfPage: canonical,
+      ...(tags.length ? { keywords: tags.join(', ') } : {}),
+    }
+  : {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: base + '/' },
+        { '@type': 'ListItem', position: 2, name: crumbName, item: canonical },
+      ],
+    };
+---
+<meta name="description" content={metaDescription} />
+<meta property="og:type" content={type} />
+<meta property="og:site_name" content={seo.site.name} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={metaDescription} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={image} />
+<meta property="og:locale" content="en_US" />
+{published && <meta property="article:published_time" content={published.toISOString()} />}
+{modified && <meta property="article:modified_time" content={modified.toISOString()} />}
+{tags.map((t) => <meta property="article:tag" content={t} />)}
+<meta name="twitter:card" content={seo.site.twitterCard} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={metaDescription} />
+<meta name="twitter:image" content={image} />
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />

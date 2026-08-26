@@ -1,0 +1,57 @@
+{
+  "_comment": [
+    "Titles and meta descriptions for the marketing pages. Marketing owns this file -",
+    "edit the strings, re-run tools/apply-seo.py, commit. No code changes needed.",
+    "Guidance: title <= 60 characters or Google truncates it in results.",
+    "Description 150-160 characters. Write it as the pitch you want shown, because",
+    "if you leave it empty Google writes its own from page text - and it will not",
+    "choose your positioning.",
+    "Every title and description below was drafted from the copy already on the page."
+  ],
+  "site": {
+    "name": "Synthetix Labs",
+    "brand": "Synthetix",
+    "url": "https://synthetixlabs.ai",
+    "ogImage": "/wp-content/uploads/2026/05/logo-new.png",
+    "twitterCard": "summary_large_image",
+    "linkedin": "https://www.linkedin.com/company/synthetixlabs/"
+  },
+  "pages": {
+    "/": {
+      "title": "Synthetix™ — Governed Agentic AI for Enterprise Delivery",
+      "description": "Specialist AI agents run discovery, architecture, build and verification as one governed pipeline — with policy gates and human oversight throughout."
+    },
+    "/platform/": {
+      "title": "The Command Layer for Your Enterprise Estate | Synthetix",
+      "description": "Synthetix unifies autonomous agents, enterprise knowledge and governance to build, modernize and operate mission-critical systems with full control."
+    },
+    "/agents/": {
+      "title": "Nine Specialist AI Agents, One Governed Pipeline | Synthetix",
+      "description": "Cartographer, Architect, Estimator, Critic, Conductor, Examiner, Gatekeeper, Scout and Mentor. Each owns a discrete function in the enterprise delivery chain."
+    },
+    "/solutions/": {
+      "title": "One Platform, Four Enterprise Outcomes | Synthetix",
+      "description": "From first line of code to full production estate — built, modernized, operated and governed by a single platform. Whatever stage you are at."
+    },
+    "/governance/": {
+      "title": "Set the Rules. Synthetix Enforces Them. | Governance",
+      "description": "Every agent action passes a configurable human gate. Every decision carries a signed evidence trail. Every change is classified, policy-checked and reversible."
+    },
+    "/why-synthetix/": {
+      "title": "Built for Enterprises That Can't Afford to Get AI Wrong",
+      "description": "Copilots augment individuals. Synthetix runs governed agentic execution across your whole estate — with workflow awareness, evidence trails and accountability."
+    },
+    "/company/": {
+      "title": "Buy the Hands, Keep Control | About Synthetix",
+      "description": "Enterprise delivery does not need faster typists. It needs AI agents that own the work, stay inside governed boundaries, and answer for every action they take."
+    },
+    "/contact/": {
+      "title": "Contact Synthetix — Let's Get Specific",
+      "description": "Tell us what you are building, modernizing or trying to fix, and we will show you exactly how Synthetix solves it. Request a demo or start a walkthrough."
+    },
+    "/resources/": {
+      "title": "Resources: Articles, Case Studies & Docs | Synthetix",
+      "description": "Research on agentic delivery, governance and modernization — plus customer case studies and full documentation for every Synthetix agent."
+    }
+  }
+}

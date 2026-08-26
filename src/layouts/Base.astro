@@ -12,13 +12,16 @@
 import headHtml from './shell/head.html?raw';
 import headerHtml from './shell/header.html?raw';
 import footerHtml from './shell/footer.html?raw';
+import Seo from '../components/Seo.astro';
 
 interface Props {
   title: string;
   canonical: string;
   bodyClass: string;
+  description?: string;
+  path?: string;
 }
-const { title, canonical, bodyClass } = Astro.props;
+const { title, canonical, bodyClass, description = '', path = '/' } = Astro.props;
 ---
 <!DOCTYPE html>
 <html lang="en-US">
@@ -26,6 +29,7 @@ const { title, canonical, bodyClass } = Astro.props;
 	<meta charset="UTF-8" />
 	<title set:html={title}></title>
 	<link rel="canonical" href={canonical} />
+	{description && <Seo title={title} description={description} path={path} />}
 	<Fragment set:html={headHtml} />
 </head>
 <body class={bodyClass}>
