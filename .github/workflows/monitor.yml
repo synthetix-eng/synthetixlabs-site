@@ -14,7 +14,7 @@ on:
       base_url:
         description: 'Base URL to verify'
         required: false
-        default: 'https://synthetixlabs-site.web.app'
+        default: 'https://synthetixlabs.ai'
 
 permissions:
   contents: read
@@ -35,8 +35,13 @@ jobs:
       - name: Verify live site
         id: verify
         run: |
-          URL="${{ github.event.inputs.base_url || 'https://synthetixlabs-site.web.app' }}"
-          ./scripts/verify-live.sh "$URL" 2>&1 | tee /tmp/verify.log
+          URL="${{ github.event.inputs.base_url || 'https://synthetixlabs.ai' }}"
+          npm ci --no-audit --no-fund
+          npx astro build
+          # pipefail matters: without it this step takes tee's exit status (0),
+          # so the monitor reported success no matter what the script found.
+          set -o pipefail
+          ./scripts/verify-live.sh "$URL" dist 2>&1 | tee /tmp/verify.log
         continue-on-error: true
 
       - name: Open an issue if verification failed
