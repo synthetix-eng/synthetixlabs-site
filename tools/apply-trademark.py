@@ -24,14 +24,19 @@ Idempotent.
 """
 import pathlib, re, sys
 
-TM = '™'
+# Urbanist - the site's brand font - has NO real trademark glyph. Its U+2122
+# measures exactly as wide as the literal letters "TM" (23.42px vs 23.42px at
+# 16px), so the browser draws full-size letters and the mark reads as the typo
+# "SynthetixTM". Scoping just this character to a font that does have the glyph
+# fixes it without touching the rest of the type. See .tm in the stylesheet.
+TM = '<span class="tm">™</span>'
 # "Synthetix" not followed by " Labs", not part of a longer word, not already marked
 CAND = re.compile(r'Synthetix(?!™)(?!\s+Labs)(?![A-Za-z])')
 
 
 def mark_html(path):
     t = path.read_text(errors='ignore')
-    if TM in t:
+    if 'class="tm"' in t:
         return 0
 
     # never before the end of the site header
@@ -58,7 +63,7 @@ def mark_html(path):
 
 def mark_mdx(path):
     t = path.read_text(errors='ignore')
-    if TM in t:
+    if 'class="tm"' in t:
         return 0
     # body only - never the frontmatter
     parts = t.split('---', 2)
