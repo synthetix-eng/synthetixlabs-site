@@ -82,5 +82,17 @@ const bWithCrumb = bHtml.replace(
 	</div>
 )}
 <Fragment set:html={dHtml} />
+<script id="cookie-prefs-handler" is:inline>
+/* HubSpot already loads on every page, so its consent banner is the cheapest
+   real option — no new vendor, no new script origin. Enable it under
+   Settings > Privacy & Consent in HubSpot; until then this is a no-op. */
+document.addEventListener('click', function (e) {
+  var el = e.target.closest('[data-action="cookie-prefs"]');
+  if (!el) return;
+  e.preventDefault();
+  window._hsp = window._hsp || [];
+  window._hsp.push(['showBanner']);
+});
+</script>
 </body>
 </html>

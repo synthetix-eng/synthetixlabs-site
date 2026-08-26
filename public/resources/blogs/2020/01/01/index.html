@@ -870,22 +870,10 @@ Bengaluru, Karnataka - 560045 </p>
                         <div class="left-social-area">
                             <ul>
                                                                 <li>
-                                    <a href="index.html#">
-                                        Instagram                                    </a>
+                                    <a href="https://www.linkedin.com/company/synthetixlabs/" target="_blank" rel="noopener noreferrer">
+                                        LinkedIn                                    </a>
                                 </li>
-                                                                <li>
-                                    <a href="index.html#">
-                                        Linkedin                                    </a>
-                                </li>
-                                                                <li>
-                                    <a href="index.html#">
-                                        Dribbble                                    </a>
-                                </li>
-                                                                <li>
-                                    <a href="index.html#">
-                                        Behance                                    </a>
-                                </li>
-                                                            </ul>
+                                                                </ul>
                         </div>
 
                         <!-- Copyright -->
@@ -922,7 +910,7 @@ Bengaluru, Karnataka - 560045 </p>
         <a href="https://www.microsoft.com/en-us/privacy/privacystatement" target="_blank" rel="noopener">Microsoft Privacy Statement</a>
         <a href="../../../../../wp-content/uploads/2026/07/privacy-policy-introduction-v2-072024.pdf" target="_blank" rel="noopener">Privacy Introduction</a>
           <a href="../../../../../wp-content/uploads/2026/07/pci-072025-reasonable-accomodation-policy.pdf" target="_blank" rel="noopener">Reasonable Accommodation Policy</a>
-        <a href="index.html#" data-action="cookie-prefs">Cookie Preferences</a>
+        <a href="#" data-action="cookie-prefs">Cookie Preferences</a>
     </nav>
 </div>				</div>
 		
@@ -1045,5 +1033,17 @@ var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false
 //# sourceURL=elementor-frontend-js-before
 </script>
 <script id="elementor-frontend-js" src="../../../../../wp-content/plugins/elementor/assets/js/frontend.min.js"></script>
+<script id="cookie-prefs-handler">
+/* HubSpot already loads on every page, so its consent banner is the cheapest
+   real option here - no new vendor, no new script origin. Enable it under
+   Settings > Privacy & Consent in HubSpot; until then this is a no-op. */
+document.addEventListener('click', function (e) {
+  var el = e.target.closest('[data-action="cookie-prefs"]');
+  if (!el) return;
+  e.preventDefault();
+  window._hsp = window._hsp || [];
+  window._hsp.push(['showBanner']);
+});
+</script>
 </body>
 </html> 
