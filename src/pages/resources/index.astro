@@ -38,5 +38,17 @@ const [article, caseStudy, agentDoc] = await Promise.all([
 </head>
 <body class="wp-singular page-template-default page page-id-2096 page-parent wp-embed-responsive wp-theme-agenio angie-default ehf-header ehf-footer ehf-template-agenio ehf-stylesheet-agenio ally-default home-bg main-home onepage overflow-x-visible elementor-default elementor-kit-7 elementor-page elementor-page-2096">
 <Fragment set:html={seg0} />{article}<Fragment set:html={seg1} />{caseStudy}<Fragment set:html={seg2} />{agentDoc}<Fragment set:html={seg3} />
+<script id="cookie-prefs-handler" is:inline>
+/* HubSpot already loads on every page, so its consent banner is the cheapest
+   real option — no new vendor, no new script origin. Enable it under
+   Settings > Privacy & Consent in HubSpot; until then this is a no-op. */
+document.addEventListener('click', function (e) {
+  var el = e.target.closest('[data-action="cookie-prefs"]');
+  if (!el) return;
+  e.preventDefault();
+  window._hsp = window._hsp || [];
+  window._hsp.push(['showBanner']);
+});
+</script>
 </body>
 </html>
